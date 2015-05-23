@@ -54,13 +54,48 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="hr.fet.iDom.model"/>
+   <value n="jbo.JpxName" v="hr.fet.iDom.model.Model"/>
+   <value n="JboProject" v="true"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="ADFbc"/>
          <string v="Java"/>
+         <string v="XML"/>
       </list>
    </hash>
+   <value n="oracle.jbo.AMPackage" v="Am"/>
+   <value n="oracle.jbo.ASPackage" v="Entity.Assoc"/>
+   <value n="oracle.jbo.EOPackage" v="Entity"/>
+   <value n="oracle.jbo.ObjAMSuffix" v="AM"/>
+   <value n="oracle.jbo.ObjAssocSuffix" v="Assoc"/>
+   <value n="oracle.jbo.ObjEOSuffix" v="EO"/>
+   <value n="oracle.jbo.ObjViewLinkSuffix" v="Link"/>
+   <value n="oracle.jbo.ObjVOSuffix" v="VO"/>
+   <value n="oracle.jbo.SavedPreferences" v="true"/>
+   <value n="oracle.jbo.VLPackage" v="VO.Link"/>
+   <value n="oracle.jbo.VOPackage" v="VO"/>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".cpx"/>
+         <string v=".dcx"/>
+         <string v=".ejx"/>
+         <string v=".gif"/>
+         <string v=".ini"/>
+         <string v=".jpeg"/>
+         <string v=".jpg"/>
+         <string v=".png"/>
+         <string v=".properties"/>
+         <string v=".sva"/>
+         <string v=".tag"/>
+         <string v=".tld"/>
+         <string v=".wsdl"/>
+         <string v=".xcfg"/>
+         <string v=".xlf"/>
+         <string v=".xml"/>
+         <string v=".xsd"/>
+         <string v=".xsl"/>
+         <string v=".jpx"/>
+      </list>
       <value n="internalEncoding" v="Cp1250"/>
       <list n="Javac.commandline.optionlist">
          <string v="-g"/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkSjIdAssoc"
+  Version="11.1.2.64.36">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="MSj"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.fet.iDom.model.Entity.MSjEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MSj"/>
+      <Attr Name="_foreignKey" Value="hr.fet.iDom.model.Entity.MSjEO.SysC0069877"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.MSjEO.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TIdomacice"
+    Cardinality="-1"
+    Owner="hr.fet.iDom.model.Entity.TIdomaciceEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TIdomacice"/>
+      <Attr Name="_foreignKey" Value="hr.fet.iDom.model.Entity.TIdomaciceEO.FkSjId"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.SjId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MOzn2EO"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="M_OZN2"
+  AliasName="MOzn2EO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="M_OZN2"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Opis"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="OPIS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="M_OZN2">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TIdomacice"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkOzn2Assoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkOzn2Assoc.TIdomacice"
+    AssociationOtherEnd="hr.fet.iDom.model.Entity.Assoc.FkOzn2Assoc.MOzn2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="MOzn2Pk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="M_OZN2_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.MOzn2EO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

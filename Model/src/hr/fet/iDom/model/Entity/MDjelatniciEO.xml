@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MDjelatniciEO"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="M_DJELATNICI"
+  AliasName="MDjelatniciEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    Precision="32"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="M_DJELATNICI"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="4"
+    ColumnName="SIFRA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="M_DJELATNICI">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ime"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="IME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="M_DJELATNICI">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Prezime"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="PREZIME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="M_DJELATNICI">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TIdomacice"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc.TIdomacice"
+    AssociationOtherEnd="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc.MDjelatnici"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="MTcodjeSifraUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="M_TCODJE_SIFRA_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.MDjelatniciEO.Sifra"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0069883"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0069883"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.MDjelatniciEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

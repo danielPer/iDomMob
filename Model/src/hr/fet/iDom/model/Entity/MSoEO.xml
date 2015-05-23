@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MSoEO"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="M_SO"
+  AliasName="MSoEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    Precision="32"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="M_SO"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="SIFRA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="M_SO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Naziv"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="NAZIV"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="M_SO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MSj"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc.MSj"
+    AssociationOtherEnd="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc.MSo"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="MSoSifraUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="M_SO_SIFRA_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.MSoEO.Sifra"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0069872"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0069872"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.Entity.MSoEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

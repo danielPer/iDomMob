@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MOzn1VO"
+  Version="11.1.2.64.36"
+  SelectList="MOzn1EO.ID, 
+       MOzn1EO.OPIS"
+  FromList="M_OZN1 MOzn1EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="MOzn1EO"
+    Entity="hr.fet.iDom.model.Entity.MOzn1EO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MOzn1EO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Opis"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Opis"
+    EntityUsage="MOzn1EO"
+    AliasName="OPIS"/>
+  <ViewLinkAccessor
+    Name="TIdomacice"
+    ViewLink="hr.fet.iDom.model.VO.Link.FkOzn1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

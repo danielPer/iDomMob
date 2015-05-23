@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MSjVO"
+  Version="11.1.2.64.36"
+  SelectList="MSjEO.ID, 
+       MSjEO.SO_ID, 
+       MSjEO.BROJ, 
+       MSjEO.BR_OPOSTELJA, 
+       MSjEO.BR_PPOSTELJA, 
+       MSjEO.OPIS"
+  FromList="M_SJ MSjEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="MSjEO"
+    Entity="hr.fet.iDom.model.Entity.MSjEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSjEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="SoId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="SoId"
+    EntityUsage="MSjEO"
+    AliasName="SO_ID"/>
+  <ViewAttribute
+    Name="Broj"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Broj"
+    EntityUsage="MSjEO"
+    AliasName="BROJ"/>
+  <ViewAttribute
+    Name="BrOpostelja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BrOpostelja"
+    EntityUsage="MSjEO"
+    AliasName="BR_OPOSTELJA"/>
+  <ViewAttribute
+    Name="BrPpostelja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BrPpostelja"
+    EntityUsage="MSjEO"
+    AliasName="BR_PPOSTELJA"/>
+  <ViewAttribute
+    Name="Opis"
+    PrecisionRule="true"
+    EntityAttrName="Opis"
+    EntityUsage="MSjEO"
+    AliasName="OPIS"/>
+  <ViewLinkAccessor
+    Name="TIdomacice"
+    ViewLink="hr.fet.iDom.model.VO.Link.FkSjIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

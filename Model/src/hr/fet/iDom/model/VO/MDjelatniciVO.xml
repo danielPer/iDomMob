@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MDjelatniciVO"
+  Version="11.1.2.64.36"
+  SelectList="MDjelatniciEO.ID, 
+       MDjelatniciEO.SIFRA, 
+       MDjelatniciEO.IME, 
+       MDjelatniciEO.PREZIME"
+  FromList="M_DJELATNICI MDjelatniciEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="MDjelatniciEO"
+    Entity="hr.fet.iDom.model.Entity.MDjelatniciEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MDjelatniciEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Sifra"
+    EntityUsage="MDjelatniciEO"
+    AliasName="SIFRA"/>
+  <ViewAttribute
+    Name="Ime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ime"
+    EntityUsage="MDjelatniciEO"
+    AliasName="IME"/>
+  <ViewAttribute
+    Name="Prezime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Prezime"
+    EntityUsage="MDjelatniciEO"
+    AliasName="PREZIME"/>
+  <ViewLinkAccessor
+    Name="TIdomacice"
+    ViewLink="hr.fet.iDom.model.VO.Link.FkTcodjeIdIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TIdomaciceVO"
+  Version="11.1.2.64.36"
+  SelectList="TIdomaciceEO.ID, 
+       TIdomaciceEO.SJ_ID, 
+       TIdomaciceEO.DJE_ID, 
+       TIdomaciceEO.DATUM, 
+       TIdomaciceEO.OZN_DOMACICE1, 
+       TIdomaciceEO.OZN_DOMACICE2, 
+       TIdomaciceEO.BR_OSOBA, 
+       TIdomaciceEO.NAPOMENA"
+  FromList="T_IDOMACICE TIdomaciceEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="TIdomaciceEO"
+    Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TIdomaciceEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="SjId"
+    PrecisionRule="true"
+    EntityAttrName="SjId"
+    EntityUsage="TIdomaciceEO"
+    AliasName="SJ_ID"/>
+  <ViewAttribute
+    Name="DjeId"
+    PrecisionRule="true"
+    EntityAttrName="DjeId"
+    EntityUsage="TIdomaciceEO"
+    AliasName="DJE_ID"/>
+  <ViewAttribute
+    Name="Datum"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Datum"
+    EntityUsage="TIdomaciceEO"
+    AliasName="DATUM"/>
+  <ViewAttribute
+    Name="OznDomacice1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OznDomacice1"
+    EntityUsage="TIdomaciceEO"
+    AliasName="OZN_DOMACICE1"/>
+  <ViewAttribute
+    Name="OznDomacice2"
+    PrecisionRule="true"
+    EntityAttrName="OznDomacice2"
+    EntityUsage="TIdomaciceEO"
+    AliasName="OZN_DOMACICE2"/>
+  <ViewAttribute
+    Name="BrOsoba"
+    PrecisionRule="true"
+    EntityAttrName="BrOsoba"
+    EntityUsage="TIdomaciceEO"
+    AliasName="BR_OSOBA"/>
+  <ViewAttribute
+    Name="Napomena"
+    PrecisionRule="true"
+    EntityAttrName="Napomena"
+    EntityUsage="TIdomaciceEO"
+    AliasName="NAPOMENA"/>
+</ViewObject>

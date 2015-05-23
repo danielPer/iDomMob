@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MSoVO"
+  Version="11.1.2.64.36"
+  SelectList="MSoEO.ID, 
+       MSoEO.SIFRA, 
+       MSoEO.NAZIV"
+  FromList="M_SO MSoEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="MSoEO"
+    Entity="hr.fet.iDom.model.Entity.MSoEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSoEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Sifra"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Sifra"
+    EntityUsage="MSoEO"
+    AliasName="SIFRA"/>
+  <ViewAttribute
+    Name="Naziv"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Naziv"
+    EntityUsage="MSoEO"
+    AliasName="NAZIV"/>
+  <ViewLinkAccessor
+    Name="MSj"
+    ViewLink="hr.fet.iDom.model.VO.Link.FkSoIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>
