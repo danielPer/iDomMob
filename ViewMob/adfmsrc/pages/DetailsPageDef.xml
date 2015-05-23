@@ -15,8 +15,16 @@
       <nodeDefinition DefName="hr.fet.iDom.model.VO.TIdomaciceVO" Name="TIdomacice10">
         <AttrNames>
           <Item Value="Broj"/>
+          <Item Value="Ozn1Color"/>
+          <Item Value="OznDomacice1"/>
+          <Item Value="OznDomacice2"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Ozn1Color">
+      <AttrNames>
+        <Item Value="Ozn1Color"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

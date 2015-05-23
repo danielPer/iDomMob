@@ -46,6 +46,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="StaticLOV"
+    PackageName="hr.fet.iDom.model.VO.StaticLOV"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="VO"
     PackageName="hr.fet.iDom.model.VO"
     ObjectType="JboPackage">

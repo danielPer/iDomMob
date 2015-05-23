@@ -12,6 +12,12 @@
   <ViewUsage
     Name="TIdomacice1"
     ViewObjectName="hr.fet.iDom.model.VO.TIdomaciceVO"/>
+  <ViewUsage
+    Name="MOzn1_1"
+    ViewObjectName="hr.fet.iDom.model.VO.MOzn1VO"/>
+  <ViewUsage
+    Name="MOzn2_1"
+    ViewObjectName="hr.fet.iDom.model.VO.MOzn2VO"/>
   <ViewLinkUsage
     Name="LoginLink1"
     ViewLinkObjectName="hr.fet.iDom.model.VO.Link.LoginLink"

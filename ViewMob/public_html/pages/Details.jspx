@@ -23,40 +23,40 @@
                     <tr:table value="#{bindings.TIdomacice1.collectionModel}" var="row"
                               rows="#{bindings.TIdomacice1.rangeSize}"
                               emptyText="#{bindings.TIdomacice1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                              width="100%">
+                              width="100%" varStatus="vs">
                         <tr:column sortProperty="#{bindings.TIdomacice1.hints.Broj.name}" sortable="false"
-                                   headerText="#{bindings.TIdomacice1.hints.Broj.label}">
+                                   headerText="Soba">
                             <tr:panelList>
                                 <tr:commandLink action="editRoom">
-                                    <tr:panelGroupLayout styleClass="listing" layout="horizontal">
-                                        <dvtt:gauge id="gauge2" gaugeType="LED" inlineStyle="width:20px; height:20px;">
-                                            <dvtt:gaugeBackground>
-                                                <dvtt:specialEffects/>
-                                            </dvtt:gaugeBackground>
-                                            <dvtt:thresholdSet>
-                                                <dvtt:threshold thresholdMaxValue="25"/>
-                                                <dvtt:threshold thresholdMaxValue="75"/>
-                                                <dvtt:threshold/>
-                                            </dvtt:thresholdSet>
-                                            <dvtt:topLabel/>
-                                            <dvtt:bottomLabel/>
-                                            <dvtt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
-                                        </dvtt:gauge>
-                                        <dvtt:gauge id="gauge1" gaugeType="LED" inlineStyle="width:20px; height:20px;">
-                                            <dvtt:gaugeBackground>
-                                                <dvtt:specialEffects/>
-                                            </dvtt:gaugeBackground>
-                                            <dvtt:thresholdSet>
-                                                <dvtt:threshold thresholdMaxValue="25"/>
-                                                <dvtt:threshold thresholdMaxValue="75"/>
-                                                <dvtt:threshold/>
-                                            </dvtt:thresholdSet>
-                                            <dvtt:topLabel/>
-                                            <dvtt:bottomLabel/>
-                                            <dvtt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
-                                        </dvtt:gauge>
-                                        <tr:outputText value="#{row.bindings.Broj.inputValue}"
-                                                       styleClass="listingDetails"/>
+                                    <tr:panelGroupLayout styleClass="af_m_listing" layout="horizontal"
+                                                         inlineStyle="width: 100%">
+                                        <tr:panelGroupLayout layout="horizontal">
+                                            <dvtt:gauge id="${vs.current}gauge2" gaugeType="LED"
+                                                        value="#{row.bindings.OznDomacice1.inputValue}"
+                                                        inlineStyle="width:30px; height:30px;">
+                                                <dvtt:thresholdSet>
+                                                    <dvtt:threshold thresholdMaxValue="1.0" fillColor="#ff0000"/>
+                                                    <dvtt:threshold thresholdMaxValue="2.0" fillColor="#0000ff"/>
+                                                    <dvtt:threshold thresholdMaxValue="3.0" fillColor="#0ff000"/>
+                                                    <dvtt:threshold thresholdMaxValue="4.0" fillColor="#00ff00"/>
+                                                    <dvtt:threshold thresholdMaxValue="5.0" fillColor="#0000ff"/>
+                                                    <dvtt:threshold fillColor="#000ff0"/>
+                                                </dvtt:thresholdSet>
+                                            </dvtt:gauge>
+                                            <dvtt:gauge id="${vs.current}gauge1" gaugeType="LED"
+                                                        inlineStyle="width:30px; height:30px;"
+                                                        value="#{row.bindings.OznDomacice2.inputValue}" ledStyle="LS_RECTANGLE">
+                                                <dvtt:thresholdSet>
+                                                    <dvtt:threshold thresholdMaxValue="1.0" fillColor="#00ff00"/>
+                                                    <dvtt:threshold thresholdMaxValue="2.0" fillColor="#848400"/>
+                                                    <dvtt:threshold fillColor="#000ff0"/>
+                                                </dvtt:thresholdSet>
+                                            </dvtt:gauge>
+                                        </tr:panelGroupLayout>
+                                        <tr:panelGroupLayout inlineStyle="margin-right:20px">
+                                            <tr:outputText value="#{row.bindings.Broj.inputValue}"
+                                                           inlineStyle="font-size: 1.2em margin-left: 10px;"/>
+                                        </tr:panelGroupLayout>
                                     </tr:panelGroupLayout>
                                 </tr:commandLink>
                             </tr:panelList>

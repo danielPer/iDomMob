@@ -39,6 +39,10 @@
     Name="MDjelatniciVO1"
     ViewObjectName="hr.fet.iDom.model.VO.MDjelatniciVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Oznaka1Color1"
+    ViewObjectName="hr.fet.iDom.model.VO.StaticLOV.Oznaka1Color"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_SoId"
     ListVOName="MSoVO1"
@@ -279,6 +283,18 @@
     EntityAttrName="Id"
     EntityUsage="MSoEO"
     AliasName="ID3"/>
+  <ViewAttribute
+    Name="Ozn1Color"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[Oznaka1Color1.findByKey(key(OznDomacice1),1)[0].Color]]></TransientExpression>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="Id1"/>
