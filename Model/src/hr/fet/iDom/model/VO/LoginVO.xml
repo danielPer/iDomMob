@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LoginVO"
+  Version="11.1.2.64.36"
+  SelectList="TIdomaciceEO.DJE_ID, 
+       TIdomaciceEO.ID, 
+       MSjEO.SO_ID, 
+       MSjEO.ID AS ID1"
+  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO"
+  Where="TIdomaciceEO.SJ_ID = MSjEO.ID"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="hr.fet.iDom.model.VO.LoginVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TIdomaciceEO"
+    Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
+  <EntityUsage
+    Name="MSjEO"
+    Entity="hr.fet.iDom.model.Entity.MSjEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkSjIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkSjIdAssoc.MSj"
+    SourceUsage="hr.fet.iDom.model.VO.LoginVO.TIdomaciceEO"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.SjId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSjEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="DjeId"
+    PrecisionRule="true"
+    EntityAttrName="DjeId"
+    EntityUsage="TIdomaciceEO"
+    AliasName="DJE_ID"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TIdomaciceEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="SoId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="SoId"
+    EntityUsage="MSjEO"
+    AliasName="SO_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSjEO"
+    AliasName="ID1"/>
+  <ViewLinkAccessor
+    Name="TIdomacice"
+    ViewLink="hr.fet.iDom.model.VO.Link.LoginLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

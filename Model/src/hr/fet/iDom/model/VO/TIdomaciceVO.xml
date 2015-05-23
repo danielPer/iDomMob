@@ -12,16 +12,41 @@
        TIdomaciceEO.OZN_DOMACICE1, 
        TIdomaciceEO.OZN_DOMACICE2, 
        TIdomaciceEO.BR_OSOBA, 
-       TIdomaciceEO.NAPOMENA"
-  FromList="T_IDOMACICE TIdomaciceEO"
+       TIdomaciceEO.NAPOMENA, 
+       MSjEO.SO_ID, 
+       MSjEO.ID AS ID1, 
+       MSjEO.OPIS, 
+       MSjEO.BROJ, 
+       MSjEO.BR_PPOSTELJA, 
+       MSjEO.BR_OPOSTELJA"
+  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO"
   BindingStyle="OracleName"
   CustomQuery="false"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  Where="TIdomaciceEO.SJ_ID = MSjEO.ID">
   <EntityUsage
     Name="TIdomaciceEO"
     Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
+  <EntityUsage
+    Name="MSjEO"
+    Entity="hr.fet.iDom.model.Entity.MSjEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkSjIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkSjIdAssoc.MSj"
+    SourceUsage="hr.fet.iDom.model.VO.TIdomaciceVO.TIdomaciceEO"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.SjId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSjEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -73,4 +98,46 @@
     EntityAttrName="Napomena"
     EntityUsage="TIdomaciceEO"
     AliasName="NAPOMENA"/>
+  <ViewAttribute
+    Name="SoId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="SoId"
+    EntityUsage="MSjEO"
+    AliasName="SO_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSjEO"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="Opis"
+    PrecisionRule="true"
+    EntityAttrName="Opis"
+    EntityUsage="MSjEO"
+    AliasName="OPIS"/>
+  <ViewAttribute
+    Name="Broj"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Broj"
+    EntityUsage="MSjEO"
+    AliasName="BROJ"/>
+  <ViewAttribute
+    Name="BrPpostelja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BrPpostelja"
+    EntityUsage="MSjEO"
+    AliasName="BR_PPOSTELJA"/>
+  <ViewAttribute
+    Name="BrOpostelja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BrOpostelja"
+    EntityUsage="MSjEO"
+    AliasName="BR_OPOSTELJA"/>
 </ViewObject>
