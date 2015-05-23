@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1250'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:tr="http://myfaces.apache.org/trinidad" xmlns:dvtt="http://xmlns.oracle.com/dss/trinidad/faces">
+    <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+                doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+                doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+    <jsp:directive.page contentType="text/html;charset=windows-1250"/>
+    <f:view>
+        <trh:html>
+            <trh:head>
+                <meta http-equiv="Content-Type" content="text/html; charset=windows-1250"/>
+                <f:verbatim>
+                    <meta name="viewport"
+                          content="width=device-width; height=device-height;  initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+                </f:verbatim>
+            </trh:head>
+            <trh:body>
+                <tr:messages/><h:form>
+                    <tr:panelHeader text="panelHeader 1" styleClass="af_m_toolbar">
+                        <tr:commandButton text="Login" action="login" styleClass="af_m_button"/>
+                    </tr:panelHeader>
+                    <tr:panelFormLayout>
+                        <tr:selectOneChoice value="#{bindings.DjeId.inputValue}" label="#{bindings.DjeId.label}">
+                            <f:selectItems value="#{bindings.DjeId.items}"/>
+                        </tr:selectOneChoice>
+                        <tr:selectOneChoice value="#{bindings.SoId.inputValue}" label="#{bindings.SoId.label}">
+                            <f:selectItems value="#{bindings.SoId.items}"/>
+                        </tr:selectOneChoice>
+                    </tr:panelFormLayout>
+                </h:form>
+            </trh:body>
+        </trh:html>
+    </f:view>
+    <!--oracle-jdev-comment:deviceCategory:pda-->
+</jsp:root>

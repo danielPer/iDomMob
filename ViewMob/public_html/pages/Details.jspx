@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='windows-1250'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:tr="http://myfaces.apache.org/trinidad" xmlns:dvtt="http://xmlns.oracle.com/dss/trinidad/faces">
+    <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+                doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+                doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+    <jsp:directive.page contentType="text/html;charset=windows-1250"/>
+    <f:view>
+        <trh:html>
+            <trh:head>
+                <meta http-equiv="Content-Type" content="text/html; charset=windows-1250"/>
+            <f:verbatim>
+                    <meta name="viewport"
+                          content="width=device-width; height=device-height;  initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+                </f:verbatim>
+            </trh:head>
+            <trh:body>
+                <tr:messages/><h:form>
+                    <tr:panelHeader text="panelHeader 1" styleClass="af_m_toolbar">
+                        <tr:commandButton text="LogOut" action="logout" styleClass="af_m_backButton"/>
+                    </tr:panelHeader>
+                    <tr:table value="#{bindings.TIdomacice1.collectionModel}" var="row"
+                              rows="#{bindings.TIdomacice1.rangeSize}"
+                              emptyText="#{bindings.TIdomacice1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              selectedRowKeys="#{bindings.TIdomacice1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.TIdomacice1.collectionModel.makeCurrent}"
+                              rowSelection="single">
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.Datum.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.Datum.label}">
+                            <tr:outputText value="#{row.bindings.Datum.inputValue}">
+                                <f:convertDateTime pattern="#{bindings.TIdomacice1.hints.Datum.format}"/>
+                            </tr:outputText>
+                        </tr:column>
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.BrOsoba.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.BrOsoba.label}">
+                            <tr:outputText value="#{row.bindings.BrOsoba.inputValue}">
+                                <f:convertNumber groupingUsed="false"
+                                                 pattern="#{bindings.TIdomacice1.hints.BrOsoba.format}"/>
+                            </tr:outputText>
+                        </tr:column>
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.Napomena.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.Napomena.label}">
+                            <tr:outputText value="#{row.bindings.Napomena.inputValue}"/>
+                        </tr:column>
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.Opis.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.Opis.label}">
+                            <tr:outputText value="#{row.bindings.Opis.inputValue}"/>
+                        </tr:column>
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.Broj.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.Broj.label}">
+                            <tr:outputText value="#{row.bindings.Broj.inputValue}"/>
+                        </tr:column>
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.BrPpostelja.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.BrPpostelja.label}">
+                            <tr:outputText value="#{row.bindings.BrPpostelja.inputValue}">
+                                <f:convertNumber groupingUsed="false"
+                                                 pattern="#{bindings.TIdomacice1.hints.BrPpostelja.format}"/>
+                            </tr:outputText>
+                        </tr:column>
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.BrOpostelja.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.BrOpostelja.label}">
+                            <tr:outputText value="#{row.bindings.BrOpostelja.inputValue}">
+                                <f:convertNumber groupingUsed="false"
+                                                 pattern="#{bindings.TIdomacice1.hints.BrOpostelja.format}"/>
+                            </tr:outputText>
+                        </tr:column>
+                    </tr:table>
+                </h:form>
+            </trh:body>
+        </trh:html>
+    </f:view>
+    <!--oracle-jdev-comment:deviceCategory:pda-->
+</jsp:root>

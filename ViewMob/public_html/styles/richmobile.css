@@ -1,0 +1,650 @@
+/* Copyright (c) 2010, Oracle and/or its affiliates. All rights reserved. */
+
+/*
+ * Styles for all Webkit-based browsers including nokia_s60.
+ */
+@agent webkit, nokia_s60 { 
+  /*
+   * Sets the style for a page's body element.
+   */
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Helvetica  !important;
+    background: rgb(206,219,235);
+    color: #000000;
+  }
+
+  /*
+   * Sets the style for a page's form element.
+   */
+  form {
+    width: 100%;
+    padding: 0;
+  }
+
+  /*
+   * Classes below applies to the following components respectively:
+   * active Prev/Next link of table
+   * inactive Prev/Next link of table
+   * goLink and commandLink
+   * breadCrumb
+   * panelTabbed
+   * links of a navigationPane whose hint is either 'button'or 'list'
+   */
+  .OraNavBarActiveLink,
+  .OraNavBarInActiveLink,
+  .OraLink:link,
+  af|breadCrumbs::step,
+  af|panelTabbed::tab  a,
+  af|navigationPane::buttons-content a {
+    color: rgb(0,52,154);
+    font-size: 13px;
+  }
+
+  /*
+   * Classes below applies to the links of a navigationPane whose hints is  
+   * either 'bar' or 'tab'.
+   */
+  af|navigationPane::bar-content a, 
+  af|navigationPane::tabs-mid  a {
+    color: rgb(0,52,154) !important;
+    font-size: 13px;
+  }
+
+  /*
+   * Class below applies to goLink and commandLink if the link is visited
+   */
+  .OraLink:visited {
+    color: #336666;
+    font-size: 13px;
+  }
+
+  /*
+   * Class below applies to goLink and commandLink if the link is active
+   */
+  .OraLink:active {
+    color: rgb(0,52,154);
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  /*
+   * Class below set the color for a selected panelTabbed
+   */
+  af|panelTabbed::tab-selected  a {
+    color: rgb(0,52,154);
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  /*
+   * Class 'af_m_banner' applies to a banner of your application. A banner means  
+   * your application's logo and a standard set of links which remain constant at 
+   * the top across all your webpages. 
+   */
+  .af_m_banner{
+    width: 100%;
+    background: #FFFFFF; 
+  }
+
+  /*
+   * Class 'af_m_bannerLink' applies to a link in your application's banner. 
+   */
+  .af_m_bannerLink {
+    text-decoration: none;
+    font-size: 12px  !important;
+    padding: 3px 5px;
+    text-align: center;
+    background: transparent;
+  }
+
+  /* 
+   * Class 'af_m_toolbar' is applicable to a panelHeader component which can    
+   * display a page's title. Title is entered in the panelHeader's text attribute. 
+   */
+  .af_m_toolbar {
+    padding: 10px;
+    width:100%;
+    height: 45px;
+    background: url(/images/toolbar.png) #6d84a2 repeat-x ;
+    display: block
+  }
+
+  /* 
+   * Expression below applies to a page's title.  
+   */
+  .af_m_toolbar > h1 {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    margin: 1px 0 0 -75px;
+    height: 45px;
+    font-size: 22px;
+    width: 155px;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #FFFFFF;
+    border-bottom: none;
+  }
+
+  /* 
+   * Class 'af_m_panelBase' sets the padding. This class can applied to  
+   * panelGroupLayout component which will apply the padding to its children.
+   */
+  .af_m_panelBase {
+     padding: 10px;
+  }
+
+  /* 
+   * Class below applies to a table component's pagination-controller.  
+   */   
+  af|table::control-bar-top {
+    background-color: #FFFFFF; 
+    border: none;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 13px;
+  }
+
+  /* 
+   * Class below applies to the column header of a table component.  
+   */
+  af|table::content tr th {
+    background-color: #EEEEEE;
+    color: rgb(112,74,0);
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 2px;
+    border: none;
+    border-left:1px solid #E0E0E0
+  }
+
+  /* 
+   * Classes below removes border of a table component.  
+   */
+  af|table::content tr th:first-child,
+  .OraTableBorder0001,
+  .OraTableBorder0101,
+  .OraTableBorder1101, 
+  .OraTableBorder1001,
+  .OraTableBorder1111 {
+    border: none;
+  }
+
+  /* 
+   * Class below applies to a table-component's content.  
+   */
+  af|table::content {
+    border-collapse: collapse; 
+    border-color: none;
+    border-style: none;
+    background: #FFFFFF;
+  }
+
+  /* 
+   * Class below applies to each cell of a table component.  
+   */
+  af|column::cell-text {
+    border-bottom: 1px solid #E0E0E0 !important;
+    background: #FFFFFF; 
+    padding: 4px 2px 4px 10px;
+    font-size: 14px;
+    list-style: none;
+    vertical-align: middle;
+  }
+
+  /*
+   * Class below is applied to the detail facet of a table component
+   */
+  af|table::detail {
+    border-bottom: 1px solid #E0E0E0 !important;
+  }
+
+  /* 
+   * Class below applies to a panelFormLayout 
+   */
+  af|panelFormLayout {
+     background: #FFFFFF;
+    -webkit-border-radius: 10px;
+  }
+
+  /* 
+   * Class below applies to the label cell of a panelFormLayout component.
+   */
+  af|panelFormLayout::label-cell {
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    color: rgb(112,74,0) !important;
+    text-align: right;
+  }
+
+  /* 
+   * Class below applies to the content cell of a panelFormLayout component.
+   */
+  af|panelFormLayout::content-cell {
+    font-size: 15px;
+    color: #000000;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 2px;
+    text-align: left;
+    text-decoration: inherit;
+    vertical-align: middle;
+    white-space:normal;
+  }
+
+  /* 
+   * Expression below makes all children of a panelForm's content-cell to inherit 
+   * the font-size.
+   */
+  af|panelFormLayout::content-cell * {
+    font-size: inherit;
+  }
+
+  /* 
+   * Class below applies to the parent element of each showDetailItem in
+   * a panelAccordion.
+   */
+  af|panelAccordion::content {
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+    width: 100%;
+  }
+
+  /* 
+   * Class below applies to showDetail links.
+   */
+  af|showDetail::prompt-link,
+  af|showDetail::disclosure-icon-link {
+    text-decoration: none;
+  }
+
+  /* 
+   * Class below applies to a caption group.
+   */
+  af|panelCaptionGroup {
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+  }
+
+  /* 
+   * Class below applies to caption text.
+   */
+  af|panelCaptionGroup::caption { 
+    color: black;  
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 3px;
+  }
+
+  /*
+   * Expression below applies to a panelList component.
+   */
+  af|panelList ul {
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    border-top:1px solid #E0E0E0;
+  }
+
+  af|panelList ul > li {
+    margin: 0;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 8px 0 8px 10px ;
+    list-style: none 
+  }
+
+  /*
+   * This expression is applied to all links in a panelList. 
+   */
+  af|panelList ul > li  a {
+    display: block ;
+    text-decoration: none;
+    color: rgb(0,52,154);
+    background: url(/images/listarrow.png) no-repeat right center ;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  /*
+   * Classes below sets the background for navigationPane components. 
+   * af|navigationPane applies to the hints 'list' and 'button'.
+   * af|navigationPane::bar applies to the hint 'bar'
+   */
+  af|navigationPane, 
+  af|navigationPane::bar {
+    background: #FFFFFF;
+  }
+
+  /* 
+   * Class below can be applied to a commandLink/goLink if the commandLink 
+   * needs to display some detail below it. These details can be displayed using 
+   * an outputText. The commandLink and this outputText can be rendered vertically 
+   * using panelGroupLayout (Attr: layout = 'vertical')
+   */
+  .af_m_listingLink {
+    display: block;
+    text-decoration: none;
+    padding-right: 35px;
+    font-size: 17px  !important;
+    font-weight: bold  !important;
+    padding-top: 5px;
+    color: rgb(0,52,154)  !important;
+    background: url(/images/listarrow.png) no-repeat right bottom;
+  }
+
+  /* 
+   * Classes below is same as the above class af_m_listingLink except it doesn't 
+   * provide a background image.
+   */
+  .af_m_listingLink_noImage {
+    display: block;
+    text-decoration: none;
+    font-size: 17px  !important;
+    font-weight: bold  !important;
+    padding-top: 5px;
+    color: rgb(0,52,154)  !important;
+  }
+
+  /* 
+   * Class below can be applied to a commandLink if no detail needs to be 
+   * display below it.
+   */
+  .af_m_commandLink {
+    display: block;
+    text-decoration: none;
+    color: rgb(0,52,154)  !important;
+    padding-right: 35px;
+    font-size: 17px  !important;
+    font-weight: bold  !important;
+    background: url(/images/listarrow.png) no-repeat right center;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
+  /* 
+   * This expression applies to all active links which have any the
+   * styleClasses af_m_listingLink and af_m_commandLink. 
+   */
+  .af_m_listingLink:active,
+  .af_m_commandLink:active {
+    background: url(/images/loading.gif) no-repeat right center !important;
+  }
+
+  /* 
+   * Class below can be applied to an outputText component which displays details 
+   * related to a commandLink component that is rendered above the outputText. 
+   */
+  .af_m_listingDetails {
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666 !important;
+    text-decoration: none;
+  }
+
+  /* 
+   * Class below can be applied to an outputText component if it needs to display 
+   * the data in bold. 
+   */
+  .af_m_listingPrimaryDetails{
+    text-align: left;
+    font-size: 17px;
+    font-weight: normal;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  /*
+   * This style can be used against a table component to have a fixed layout.
+   */
+  .af_m_fixedLayout {
+    table-layout: fixed;
+    word-wrap: break-word; 
+  }
+
+  /*
+   * This expression applies to a date-picker icon
+   */
+  img[src$="dfb.gif"] {
+    vertical-align: top;
+  }
+
+  /*
+   * Class below can be applied to an outputText if it display a heading 
+   */
+  .af_m_heading{
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* 
+   * Expression below applies to panelFormLayout's label if it is a child of a  
+   * table's detailStamp facet
+   */
+  af|table::detail af|panelFormLayout::label-cell {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px 2px 2px 8px;
+    color: black;
+    text-align: left;
+    height: auto;
+  }
+
+  /* 
+   * Expression below applies to panelFormLayout's field if it is a child of a  
+   * table's detailStamp facet
+   */
+  af|table::detail af|panelFormLayout::content-cell {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px 2px 2px 0px;
+    color: black;
+    text-align: left;
+    height: auto;
+  }
+
+  /* 
+   * Expression below applies to all children of a panelForm's field-cell if it  
+   * is a child of a table's detailStamp facet
+   */
+  af|table::detail af|panelFormLayout::content-cell * {
+    font-size: inherit;
+  }
+
+  /* 
+  * A table with "rowSelection" attribute as "single" renders a "Select" column 
+  * with radio buttons. The class below applies to the "Select" column.
+  */ 
+  af|tableSelectOne::cell-icon-format,
+  af|tableSelectMany::cell-icon-format{
+   border-bottom: 1px solid #E0E0E0 !important;
+   text-align: center;
+   background: #FFFFFF; 
+  }
+  }
+
+  /*
+  * Styles for only Webkit-based browsers but nokiaS60
+  */
+
+  @agent webkit { 
+
+  af|navigationPane::list-content a {
+    color: rgb(0,52,154);
+    font-size: 13px;
+  }
+
+  .af_m_bannerLink {
+   color: rgb(0,52,154) !important;
+  }
+
+  .af_m_toolbar {
+    -webkit-box-sizing: border-box ;
+  }
+
+  /* 
+   * Class 'af_m_backButton' is applicable to a commandLink component which 
+   * will be displayed to the left side of a page's title. This commandLink  
+   * performs cancel operations and can be used to navigate back to the previous 
+   * page
+   */
+  .af_m_toolbar .af_m_backButton {
+    position: absolute;
+    left: 5px;
+    padding: 7px 5px 7px 11px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    border-width: 0 5px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #FFFFFF  !important;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+    -webkit-border-image: url(/images/backbutton.png) 0 5 0 5;
+  }
+
+  /* 
+   * Class 'af_m_button' is applicable to a commandLink component which will  
+   * be displayed to the right side of a page's title. This commandLink completes   
+   * a transaction initiated in the page. 
+   */
+  .af_m_toolbar .af_m_button {
+    position: absolute;
+    right: 5px;
+    padding: 7px 5px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    border-width: 0 5px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #FFFFFF  !important;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+    -webkit-border-image: url(/images/toolbutton.png) 0 5 0 5;
+  }
+
+  /* 
+   * Class below applies to the link element for the title of each enabled 
+   * showDetailItem in a panelAccordion.
+   */
+  af|panelAccordion::title-link {
+    font-weight: bold;
+    color: rgb(0,52,154) !important;
+    text-decoration: none;
+    font-size: 15px;
+  }
+}
+
+/*
+ * Styles for only nokias60 browsers.
+ */
+@agent nokia_s60 {
+
+  af|navigationPane::list-content {
+    color: rgb(0,52,154);
+    font-size: 13px;
+  }
+
+  .af_m_bannerLink {
+    color: rgb(168,233,251) !important;
+  }
+
+  .af_m_toolbar {
+    box-sizing: border-box ;
+  }
+
+  /* 
+   * Class 'af_m_backButton' is applicable to a commandLink component which 
+   * will be displayed to the left side of a page's title. This commandLink  
+   * performs cancel operations and can be used to navigate back to the previous 
+   * page
+   */
+  .af_m_toolbar .af_m_backButton {
+    position: absolute;
+    left: 5px;
+    width: 55px;
+    padding: 4px 5px 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #FFFFFF  !important;
+    background-position: right top;
+    background-repeat: no-repeat !important;
+    background: url(/images/backbutton.png) no-repeat transparent;
+    white-space: nowrap;
+  }
+
+  /* 
+   * Class 'af_m_button' is applicable to a commandLink component which will  
+   * be displayed to the right side of a page's title. This commandLink completes   
+   * a transaction initiated in the page. 
+   */
+  .af_m_toolbar .af_m_button {
+    position: absolute;
+    right: 5px;
+    padding: 4px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #FFFFFF  !important;
+    background-position: right top; 
+    background-repeat: no-repeat!important;
+    background: url(/images/toolbutton.png);
+    white-space: nowrap;
+  }
+
+  /* 
+   * Class below applies to the link element for the title of each enabled 
+   * showDetailItem in a panelAccordion.
+   */  
+  af|panelAccordion::title-link {
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+    color: rgb(0,52,154);
+    text-decoration: none;
+  }  
+
+  af|column::cell-text {
+    font-weight: normal;
+  }
+
+   af|commandButton {
+    background:rgb(231,231,231);
+    font-size: 13px;
+  }
+
+  .af_m_picButton {
+    border: none;
+    background: transparent
+  }
+
+  .af_m_listingLink {
+    padding-right: 30px;
+  }
+
+  .af_m_commandLink {
+    padding-right: 30px;
+  }
+
+  .af_m_listingDetails {
+    font-size: 14px;
+  }
+}

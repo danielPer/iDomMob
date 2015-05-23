@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LoginLink"
+  Version="11.1.2.64.36">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="hr.fet.iDom.model.VO.Link.LoginLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="Login"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.fet.iDom.model.VO.LoginVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Login"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.VO.LoginVO.DjeId"/>
+      <Item Value="hr.fet.iDom.model.VO.LoginVO.SoId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TIdomacice"
+    Cardinality="-1"
+    Owner="hr.fet.iDom.model.VO.TIdomaciceVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TIdomacice"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.VO.TIdomaciceVO.DjeId"/>
+      <Item Value="hr.fet.iDom.model.VO.TIdomaciceVO.SoId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

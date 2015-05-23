@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="LoginPageDef" Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Login1" RangeSize="25" DataControl="AppModuleAMDataControl" id="Login1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="Login1Iterator" StaticList="false" Uses="LOV_DjeId" id="DjeId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="Login1Iterator" StaticList="false" Uses="LOV_SoId" id="SoId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

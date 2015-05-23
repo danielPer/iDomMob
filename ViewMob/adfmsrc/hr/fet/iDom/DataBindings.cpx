@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="hr.fet.iDom" ClientType="Generic">
+  <pageMap>
+    <page path="/pages/Login.jspx" usageId="hr_fet_iDom_LoginPageDef"/>
+    <page path="/pages/Details.jspx" usageId="hr_fet_iDom_DetailsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="hr_fet_iDom_LoginPageDef" path="pages.LoginPageDef"/>
+    <page id="hr_fet_iDom_DetailsPageDef" path="pages.DetailsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleAMDataControl" Package="hr.fet.iDom.model.Am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
