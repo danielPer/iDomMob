@@ -22,6 +22,49 @@
         ResId="hr.fet.iDom.model.VO.LoginVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="MDjelatniciVO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MDjelatniciVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MSoVO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MSoVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DjeId"
+    ListVOName="MDjelatniciVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DjeId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Ime"/>
+      <Item Value="Prezime"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SoId"
+    ListVOName="MSoVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SoId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TIdomaciceEO"
     Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
@@ -48,7 +91,15 @@
     PrecisionRule="true"
     EntityAttrName="DjeId"
     EntityUsage="TIdomaciceEO"
-    AliasName="DJE_ID"/>
+    AliasName="DJE_ID"
+    LOVName="LOV_DjeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -62,7 +113,15 @@
     PrecisionRule="true"
     EntityAttrName="SoId"
     EntityUsage="MSjEO"
-    AliasName="SO_ID"/>
+    AliasName="SO_ID"
+    LOVName="LOV_SoId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Id1"
     IsNotNull="true"

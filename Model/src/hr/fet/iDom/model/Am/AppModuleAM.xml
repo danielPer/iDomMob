@@ -6,4 +6,16 @@
   Name="AppModuleAM"
   Version="11.1.2.64.36"
   ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="Login1"
+    ViewObjectName="hr.fet.iDom.model.VO.LoginVO"/>
+  <ViewUsage
+    Name="TIdomacice1"
+    ViewObjectName="hr.fet.iDom.model.VO.TIdomaciceVO"/>
+  <ViewLinkUsage
+    Name="LoginLink1"
+    ViewLinkObjectName="hr.fet.iDom.model.VO.Link.LoginLink"
+    SrcViewUsageName="hr.fet.iDom.model.Am.AppModuleAM.Login1"
+    DstViewUsageName="hr.fet.iDom.model.Am.AppModuleAM.TIdomacice1"
+    Reversed="false"/>
 </AppModule>
