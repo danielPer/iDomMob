@@ -19,5 +19,20 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Ime">
+      <AttrNames>
+        <Item Value="Ime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Prezime">
+      <AttrNames>
+        <Item Value="Prezime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

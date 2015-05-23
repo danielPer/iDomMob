@@ -18,14 +18,64 @@
        MSjEO.OPIS, 
        MSjEO.BROJ, 
        MSjEO.BR_PPOSTELJA, 
-       MSjEO.BR_OPOSTELJA"
-  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO"
+       MSjEO.BR_OPOSTELJA, 
+       MDjelatniciEO.IME, 
+       MDjelatniciEO.ID AS ID2, 
+       MDjelatniciEO.PREZIME, 
+       MSoEO.NAZIV, 
+       MSoEO.ID AS ID3"
+  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO, M_DJELATNICI MDjelatniciEO, M_SO MSoEO"
   BindingStyle="OracleName"
   CustomQuery="false"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full"
   UseGlueCode="false"
-  Where="TIdomaciceEO.SJ_ID = MSjEO.ID">
+  Where="((TIdomaciceEO.SJ_ID = MSjEO.ID) AND (TIdomaciceEO.DJE_ID = MDjelatniciEO.ID(+))) AND (MSjEO.SO_ID = MSoEO.ID(+))">
+  <ViewAccessor
+    Name="MSoVO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MSoVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MDjelatniciVO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MDjelatniciVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SoId"
+    ListVOName="MSoVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SoId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DjeId"
+    ListVOName="MDjelatniciVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DjeId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Ime"/>
+      <Item Value="Prezime"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TIdomaciceEO"
     Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
@@ -47,6 +97,44 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="MDjelatniciEO"
+    Entity="hr.fet.iDom.model.Entity.MDjelatniciEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc.MDjelatnici"
+    SourceUsage="hr.fet.iDom.model.VO.TIdomaciceVO.TIdomaciceEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.DjeId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MDjelatniciEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="MSoEO"
+    Entity="hr.fet.iDom.model.Entity.MSoEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc.MSo"
+    SourceUsage="hr.fet.iDom.model.VO.TIdomaciceVO.MSjEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSjEO.SoId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSoEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -65,7 +153,15 @@
     PrecisionRule="true"
     EntityAttrName="DjeId"
     EntityUsage="TIdomaciceEO"
-    AliasName="DJE_ID"/>
+    AliasName="DJE_ID"
+    LOVName="LOV_DjeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Datum"
     IsNotNull="true"
@@ -104,7 +200,15 @@
     PrecisionRule="true"
     EntityAttrName="SoId"
     EntityUsage="MSjEO"
-    AliasName="SO_ID"/>
+    AliasName="SO_ID"
+    LOVName="LOV_SoId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Id1"
     IsNotNull="true"
@@ -140,4 +244,43 @@
     EntityAttrName="BrOpostelja"
     EntityUsage="MSjEO"
     AliasName="BR_OPOSTELJA"/>
+  <ViewAttribute
+    Name="Ime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ime"
+    EntityUsage="MDjelatniciEO"
+    AliasName="IME"/>
+  <ViewAttribute
+    Name="Id2"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MDjelatniciEO"
+    AliasName="ID2"/>
+  <ViewAttribute
+    Name="Prezime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Prezime"
+    EntityUsage="MDjelatniciEO"
+    AliasName="PREZIME"/>
+  <ViewAttribute
+    Name="Naziv"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Naziv"
+    EntityUsage="MSoEO"
+    AliasName="NAZIV"/>
+  <ViewAttribute
+    Name="Id3"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSoEO"
+    AliasName="ID3"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="Id1"/>
+  </AttrArray>
 </ViewObject>
