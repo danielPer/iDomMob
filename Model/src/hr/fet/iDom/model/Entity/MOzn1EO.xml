@@ -14,9 +14,9 @@
     Name="Id"
     IsNotNull="true"
     ColumnName="ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
     TableName="M_OZN1"
     PrimaryKey="true"/>
   <Attribute

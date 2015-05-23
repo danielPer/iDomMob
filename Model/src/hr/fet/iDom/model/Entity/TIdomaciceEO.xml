@@ -13,31 +13,25 @@
   <Attribute
     Name="Id"
     IsNotNull="true"
-    Precision="32"
-    Scale="0"
     ColumnName="ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigInteger"
-    ColumnType="NUMBER"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
     TableName="T_IDOMACICE"
     PrimaryKey="true"/>
   <Attribute
     Name="SjId"
-    Precision="32"
-    Scale="0"
     ColumnName="SJ_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigInteger"
-    ColumnType="NUMBER"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
     TableName="T_IDOMACICE"/>
   <Attribute
     Name="DjeId"
-    Precision="32"
-    Scale="0"
     ColumnName="DJE_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigInteger"
-    ColumnType="NUMBER"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
     TableName="T_IDOMACICE"/>
   <Attribute
     Name="Datum"
