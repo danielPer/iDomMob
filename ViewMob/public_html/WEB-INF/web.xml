@@ -69,6 +69,14 @@
     <servlet-name>resources</servlet-name>
     <servlet-class>org.apache.myfaces.trinidad.webapp.ResourceServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>BIGRAPHSERVLET</servlet-name>
+    <servlet-class>oracle.adf.view.faces.bi.webapp.GraphServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BIGAUGESERVLET</servlet-name>
+    <servlet-class>oracle.adf.view.faces.bi.webapp.GaugeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
@@ -80,5 +88,17 @@
   <servlet-mapping>
     <servlet-name>resources</servlet-name>
     <url-pattern>/afr/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BIGRAPHSERVLET</servlet-name>
+    <url-pattern>/servlet/GraphServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BIGAUGESERVLET</servlet-name>
+    <url-pattern>/servlet/GaugeServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/bi/*</url-pattern>
   </servlet-mapping>
 </web-app>

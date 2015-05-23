@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:tr="http://myfaces.apache.org/trinidad" xmlns:dvtt="http://xmlns.oracle.com/dss/trinidad/faces">
+    <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+                doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+                doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <trh:html>
+            <trh:head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <f:verbatim>
+                    <meta name="viewport"
+                          content="width=device-width; height=device-height;  initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+                </f:verbatim>
+            </trh:head>
+            <trh:body>
+                <tr:messages/><h:form>
+                    <tr:panelHeader text="panelHeader 1" styleClass="af_m_toolbar">
+                        <tr:commandButton text="Natrag" styleClass="af_m_backButton" action="back"/>
+                    </tr:panelHeader>
+                    <tr:panelFormLayout>
+                        <tr:inputText value="#{bindings.Datum.inputValue}" label="#{bindings.Datum.hints.label}"
+                                      required="#{bindings.Datum.hints.mandatory}"
+                                      columns="#{bindings.Datum.hints.displayWidth}"
+                                      maximumLength="#{bindings.Datum.hints.precision}">
+                            <f:validator binding="#{bindings.Datum.validator}"/>
+                            <f:convertDateTime pattern="#{bindings.Datum.format}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.OznDomacice1.inputValue}"
+                                      label="#{bindings.OznDomacice1.hints.label}"
+                                      required="#{bindings.OznDomacice1.hints.mandatory}"
+                                      columns="#{bindings.OznDomacice1.hints.displayWidth}"
+                                      maximumLength="#{bindings.OznDomacice1.hints.precision}">
+                            <f:validator binding="#{bindings.OznDomacice1.validator}"/>
+                            <f:convertNumber groupingUsed="false" pattern="#{bindings.OznDomacice1.format}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.OznDomacice2.inputValue}"
+                                      label="#{bindings.OznDomacice2.hints.label}"
+                                      required="#{bindings.OznDomacice2.hints.mandatory}"
+                                      columns="#{bindings.OznDomacice2.hints.displayWidth}"
+                                      maximumLength="#{bindings.OznDomacice2.hints.precision}">
+                            <f:validator binding="#{bindings.OznDomacice2.validator}"/>
+                            <f:convertNumber groupingUsed="false" pattern="#{bindings.OznDomacice2.format}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.BrOsoba.inputValue}" label="#{bindings.BrOsoba.hints.label}"
+                                      required="#{bindings.BrOsoba.hints.mandatory}"
+                                      columns="#{bindings.BrOsoba.hints.displayWidth}"
+                                      maximumLength="#{bindings.BrOsoba.hints.precision}">
+                            <f:validator binding="#{bindings.BrOsoba.validator}"/>
+                            <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOsoba.format}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.Napomena.inputValue}" label="#{bindings.Napomena.hints.label}"
+                                      required="#{bindings.Napomena.hints.mandatory}"
+                                      columns="#{bindings.Napomena.hints.displayWidth}"
+                                      maximumLength="#{bindings.Napomena.hints.precision}">
+                            <f:validator binding="#{bindings.Napomena.validator}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.Opis.inputValue}" label="#{bindings.Opis.hints.label}"
+                                      required="#{bindings.Opis.hints.mandatory}"
+                                      columns="#{bindings.Opis.hints.displayWidth}"
+                                      maximumLength="#{bindings.Opis.hints.precision}">
+                            <f:validator binding="#{bindings.Opis.validator}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.Broj.inputValue}" label="#{bindings.Broj.hints.label}"
+                                      required="#{bindings.Broj.hints.mandatory}"
+                                      columns="#{bindings.Broj.hints.displayWidth}"
+                                      maximumLength="#{bindings.Broj.hints.precision}">
+                            <f:validator binding="#{bindings.Broj.validator}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.BrPpostelja.inputValue}"
+                                      label="#{bindings.BrPpostelja.hints.label}"
+                                      required="#{bindings.BrPpostelja.hints.mandatory}"
+                                      columns="#{bindings.BrPpostelja.hints.displayWidth}"
+                                      maximumLength="#{bindings.BrPpostelja.hints.precision}">
+                            <f:validator binding="#{bindings.BrPpostelja.validator}"/>
+                            <f:convertNumber groupingUsed="false" pattern="#{bindings.BrPpostelja.format}"/>
+                        </tr:inputText>
+                        <tr:inputText value="#{bindings.BrOpostelja.inputValue}"
+                                      label="#{bindings.BrOpostelja.hints.label}"
+                                      required="#{bindings.BrOpostelja.hints.mandatory}"
+                                      columns="#{bindings.BrOpostelja.hints.displayWidth}"
+                                      maximumLength="#{bindings.BrOpostelja.hints.precision}">
+                            <f:validator binding="#{bindings.BrOpostelja.validator}"/>
+                            <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOpostelja.format}"/>
+                        </tr:inputText>
+                    </tr:panelFormLayout>
+                </h:form>
+            </trh:body>
+        </trh:html>
+    </f:view>
+    <!--oracle-jdev-comment:deviceCategory:pda-->
+</jsp:root>

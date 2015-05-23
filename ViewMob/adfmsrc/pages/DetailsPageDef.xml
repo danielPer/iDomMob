@@ -6,33 +6,17 @@
     <iterator Binds="TIdomacice1" RangeSize="25" DataControl="AppModuleAMDataControl" id="TIdomacice1Iterator"/>
   </executables>
   <bindings>
-    <tree IterBinding="TIdomacice1Iterator" id="TIdomacice1">
-      <nodeDefinition DefName="hr.fet.iDom.model.VO.TIdomaciceVO" Name="TIdomacice10">
-        <AttrNames>
-          <Item Value="Datum"/>
-          <Item Value="BrOsoba"/>
-          <Item Value="Napomena"/>
-          <Item Value="Opis"/>
-          <Item Value="Broj"/>
-          <Item Value="BrPpostelja"/>
-          <Item Value="BrOpostelja"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <attributeValues IterBinding="TIdomacice1Iterator" id="Ime">
-      <AttrNames>
-        <Item Value="Ime"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TIdomacice1Iterator" id="Prezime">
-      <AttrNames>
-        <Item Value="Prezime"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TIdomacice1Iterator" id="Naziv">
       <AttrNames>
         <Item Value="Naziv"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="TIdomacice1Iterator" id="TIdomacice1">
+      <nodeDefinition DefName="hr.fet.iDom.model.VO.TIdomaciceVO" Name="TIdomacice10">
+        <AttrNames>
+          <Item Value="Broj"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

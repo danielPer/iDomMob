@@ -20,57 +20,48 @@
                     <tr:panelHeader styleClass="af_m_toolbar" text="#{bindings.Naziv.inputValue}">
                         <tr:commandButton text="LogOut" action="logout" styleClass="af_m_backButton"/>
                     </tr:panelHeader>
-                    <tr:panelFormLayout>
-                        <f:facet name="footer">
-                            <tr:outputText value="#{bindings.Ime.inputValue} #{bindings.Prezime.inputValue}"/>
-                        </f:facet>
-                        <tr:table value="#{bindings.TIdomacice1.collectionModel}" var="row"
-                                  rows="#{bindings.TIdomacice1.rangeSize}"
-                                  emptyText="#{bindings.TIdomacice1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                  selectedRowKeys="#{bindings.TIdomacice1.collectionModel.selectedRow}"
-                                  selectionListener="#{bindings.TIdomacice1.collectionModel.makeCurrent}"
-                                  rowSelection="single">
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.Datum.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.Datum.label}">
-                                <tr:outputText value="#{row.bindings.Datum.inputValue}">
-                                    <f:convertDateTime pattern="#{bindings.TIdomacice1.hints.Datum.format}"/>
-                                </tr:outputText>
-                            </tr:column>
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.BrOsoba.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.BrOsoba.label}">
-                                <tr:outputText value="#{row.bindings.BrOsoba.inputValue}">
-                                    <f:convertNumber groupingUsed="false"
-                                                     pattern="#{bindings.TIdomacice1.hints.BrOsoba.format}"/>
-                                </tr:outputText>
-                            </tr:column>
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.Napomena.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.Napomena.label}">
-                                <tr:outputText value="#{row.bindings.Napomena.inputValue}"/>
-                            </tr:column>
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.Opis.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.Opis.label}">
-                                <tr:outputText value="#{row.bindings.Opis.inputValue}"/>
-                            </tr:column>
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.Broj.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.Broj.label}">
-                                <tr:outputText value="#{row.bindings.Broj.inputValue}"/>
-                            </tr:column>
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.BrPpostelja.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.BrPpostelja.label}">
-                                <tr:outputText value="#{row.bindings.BrPpostelja.inputValue}">
-                                    <f:convertNumber groupingUsed="false"
-                                                     pattern="#{bindings.TIdomacice1.hints.BrPpostelja.format}"/>
-                                </tr:outputText>
-                            </tr:column>
-                            <tr:column sortProperty="#{bindings.TIdomacice1.hints.BrOpostelja.name}" sortable="false"
-                                       headerText="#{bindings.TIdomacice1.hints.BrOpostelja.label}">
-                                <tr:outputText value="#{row.bindings.BrOpostelja.inputValue}">
-                                    <f:convertNumber groupingUsed="false"
-                                                     pattern="#{bindings.TIdomacice1.hints.BrOpostelja.format}"/>
-                                </tr:outputText>
-                            </tr:column>
-                        </tr:table>
-                    </tr:panelFormLayout>
+                    <tr:table value="#{bindings.TIdomacice1.collectionModel}" var="row"
+                              rows="#{bindings.TIdomacice1.rangeSize}"
+                              emptyText="#{bindings.TIdomacice1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              width="100%">
+                        <tr:column sortProperty="#{bindings.TIdomacice1.hints.Broj.name}" sortable="false"
+                                   headerText="#{bindings.TIdomacice1.hints.Broj.label}">
+                            <tr:panelList>
+                                <tr:commandLink action="editRoom">
+                                    <tr:panelGroupLayout styleClass="listing" layout="horizontal">
+                                        <dvtt:gauge id="gauge2" gaugeType="LED" inlineStyle="width:20px; height:20px;">
+                                            <dvtt:gaugeBackground>
+                                                <dvtt:specialEffects/>
+                                            </dvtt:gaugeBackground>
+                                            <dvtt:thresholdSet>
+                                                <dvtt:threshold thresholdMaxValue="25"/>
+                                                <dvtt:threshold thresholdMaxValue="75"/>
+                                                <dvtt:threshold/>
+                                            </dvtt:thresholdSet>
+                                            <dvtt:topLabel/>
+                                            <dvtt:bottomLabel/>
+                                            <dvtt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
+                                        </dvtt:gauge>
+                                        <dvtt:gauge id="gauge1" gaugeType="LED" inlineStyle="width:20px; height:20px;">
+                                            <dvtt:gaugeBackground>
+                                                <dvtt:specialEffects/>
+                                            </dvtt:gaugeBackground>
+                                            <dvtt:thresholdSet>
+                                                <dvtt:threshold thresholdMaxValue="25"/>
+                                                <dvtt:threshold thresholdMaxValue="75"/>
+                                                <dvtt:threshold/>
+                                            </dvtt:thresholdSet>
+                                            <dvtt:topLabel/>
+                                            <dvtt:bottomLabel/>
+                                            <dvtt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
+                                        </dvtt:gauge>
+                                        <tr:outputText value="#{row.bindings.Broj.inputValue}"
+                                                       styleClass="listingDetails"/>
+                                    </tr:panelGroupLayout>
+                                </tr:commandLink>
+                            </tr:panelList>
+                        </tr:column>
+                    </tr:table>
                 </h:form>
             </trh:body>
         </trh:html>

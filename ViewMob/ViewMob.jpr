@@ -67,6 +67,7 @@
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
+         <string v="ADF_FACES"/>
          <string v="ADFm"/>
          <string v="JSF"/>
          <string v="JSP"/>
@@ -89,7 +90,7 @@
          <string v="-Xlint:-serial"/>
          <string v="-Xlint:-unchecked"/>
       </list>
-      <value n="webIANAEncoding" v="windows-1250"/>
+      <value n="webIANAEncoding" v="UTF-8"/>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
       <value n="j2eeWebAppName" v="iDom-ViewMob-webapp"/>
@@ -139,6 +140,10 @@
          </hash>
          <hash>
             <value n="id" v="MDS Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF DVT Faces Databinding Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -213,6 +218,10 @@
          </hash>
          <hash>
             <value n="id" v="MDS Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF DVT Faces Databinding Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="RoomPageDef" Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TIdomacice1" RangeSize="25" DataControl="AppModuleAMDataControl" id="TIdomacice1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Datum">
+      <AttrNames>
+        <Item Value="Datum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="OznDomacice1">
+      <AttrNames>
+        <Item Value="OznDomacice1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="OznDomacice2">
+      <AttrNames>
+        <Item Value="OznDomacice2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="BrOsoba">
+      <AttrNames>
+        <Item Value="BrOsoba"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Napomena">
+      <AttrNames>
+        <Item Value="Napomena"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Opis">
+      <AttrNames>
+        <Item Value="Opis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="Broj">
+      <AttrNames>
+        <Item Value="Broj"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="BrPpostelja">
+      <AttrNames>
+        <Item Value="BrPpostelja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="BrOpostelja">
+      <AttrNames>
+        <Item Value="BrOpostelja"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

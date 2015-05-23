@@ -48,4 +48,39 @@
       <property
          name="sdm:polyPoints">L54,444.0,179.0459,198.0327,181.34473,R54</property>
    </NavigationCase>
+   <Page
+      id="Page6">
+      <property
+         name="wildcard">false</property>
+      <property
+         name="y">276.89648</property>
+      <property
+         name="x">604.0</property>
+      <property
+         name="jspName">/pages/Room.jspx</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase7"
+      from="Page3"
+      to="Page6">
+      <property
+         name="fromOutcome">editRoom</property>
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="sdm:polyPoints">B44,481.5,232.77237,561.09827,280.0459,L54</property>
+   </NavigationCase>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase8"
+      from="Page6"
+      to="Page3">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="sdm:polyPoints">L46,563.0,273.74707,488.5,228.84473,B56</property>
+   </NavigationCase>
 </SDM>

@@ -16,5 +16,16 @@
       <from-outcome>logout</from-outcome>
       <to-view-id>/pages/Login.jspx</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>editRoom</from-outcome>
+      <to-view-id>/pages/Room.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/pages/Room.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/pages/Details.jspx</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>
