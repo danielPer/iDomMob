@@ -40,9 +40,9 @@
                                                     <dvtt:threshold thresholdMaxValue="1.0" fillColor="#ff0000"/>
                                                     <dvtt:threshold thresholdMaxValue="2.0" fillColor="#0000ff"/>
                                                     <dvtt:threshold thresholdMaxValue="3.0" fillColor="#0ff000"/>
-                                                    <dvtt:threshold thresholdMaxValue="4.0" fillColor="#00ff00"/>
-                                                    <dvtt:threshold thresholdMaxValue="5.0" fillColor="#0000ff"/>
-                                                    <dvtt:threshold fillColor="#000ff0"/>
+                                                    <dvtt:threshold thresholdMaxValue="4.0" fillColor="#ffff00"/>
+                                                    <dvtt:threshold thresholdMaxValue="5.0" fillColor="#ff84c6"/>
+                                                    <dvtt:threshold fillColor="#000bb0"/>
                                                 </dvtt:thresholdSet>
                                             </dvtt:gauge>
                                             <dvtt:gauge id="${vs.current}gauge1" gaugeType="LED"

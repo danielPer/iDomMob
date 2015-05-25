@@ -22,6 +22,7 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="hr.fet.iDom.model.VO.LoginVO.SoId"/>
+      <Item Value="hr.fet.iDom.model.VO.LoginVO.DjeId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -34,6 +35,7 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="hr.fet.iDom.model.VO.TIdomaciceVO.SoId"/>
+      <Item Value="hr.fet.iDom.model.VO.TIdomaciceVO.DjeId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

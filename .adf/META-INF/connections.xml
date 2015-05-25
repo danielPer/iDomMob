@@ -4,7 +4,7 @@
       <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="sid">
-            <Contents>orcl</Contents>
+            <Contents>xe</Contents>
          </StringRefAddr>
          <StringRefAddr addrType="subtype">
             <Contents>oraJDBC</Contents>
@@ -13,7 +13,7 @@
             <Contents>1521</Contents>
          </StringRefAddr>
          <StringRefAddr addrType="hostname">
-            <Contents>sys.efpu.hr</Contents>
+            <Contents>localhost</Contents>
          </StringRefAddr>
          <StringRefAddr addrType="user">
             <Contents>idom</Contents>
