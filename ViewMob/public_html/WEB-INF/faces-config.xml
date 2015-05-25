@@ -18,11 +18,11 @@
     </navigation-case>
     <navigation-case>
       <from-outcome>editRoom</from-outcome>
-      <to-view-id>/pages/Room.jspx</to-view-id>
+      <to-view-id>/pages/roomEdit.jspx</to-view-id>
     </navigation-case>
   </navigation-rule>
   <navigation-rule>
-    <from-view-id>/pages/Room.jspx</from-view-id>
+    <from-view-id>/pages/roomEdit.jspx</from-view-id>
     <navigation-case>
       <from-outcome>back</from-outcome>
       <to-view-id>/pages/Details.jspx</to-view-id>

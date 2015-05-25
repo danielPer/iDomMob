@@ -85,6 +85,17 @@
                             <f:validator binding="#{bindings.BrOpostelja.validator}"/>
                             <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOpostelja.format}"/>
                         </tr:inputText>
+                        <tr:inputText value="#{pageFlowScope.roomId}"
+                                      label="#{bindings.BrOpostelja.hints.label}"
+                                      required="#{bindings.BrOpostelja.hints.mandatory}"
+                                      columns="#{bindings.BrOpostelja.hints.displayWidth}"
+                                      maximumLength="#{bindings.BrOpostelja.hints.precision}">
+                            <f:validator binding="#{bindings.BrOpostelja.validator}"/>
+                            <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOpostelja.format}"/>
+                        </tr:inputText>
+                        <tr:commandButton actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}"
+                                          text="setCurrentRowWithKeyValue1"
+                                          disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}"/>
                     </tr:panelFormLayout>
                 </h:form>
             </trh:body>

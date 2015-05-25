@@ -63,24 +63,35 @@
       islink="true"
       id="NavigationCase7"
       from="Page3"
-      to="Page6">
+      to="Page9">
       <property
          name="fromOutcome">editRoom</property>
       <property
          name="description">Navigation Case</property>
       <property
-         name="sdm:polyPoints">B44,481.5,232.77237,561.09827,280.0459,L54</property>
+         name="sdm:polyPoints">B44,481.5,228.84473,363.5,355.81693,T44</property>
    </NavigationCase>
    <NavigationCase
       islink="true"
       id="NavigationCase8"
-      from="Page6"
+      from="Page9"
       to="Page3">
       <property
          name="fromOutcome">back</property>
       <property
          name="description">Navigation Case</property>
       <property
-         name="sdm:polyPoints">L46,563.0,273.74707,488.5,228.84473,B56</property>
+         name="sdm:polyPoints">T56,370.5,359.24707,488.5,231.54172,B56</property>
    </NavigationCase>
+   <Page
+      id="Page9">
+      <property
+         name="wildcard">false</property>
+      <property
+         name="y">412.89648</property>
+      <property
+         name="x">367.0</property>
+      <property
+         name="jspName">/pages/roomEdit.jspx</property>
+   </Page>
 </SDM>

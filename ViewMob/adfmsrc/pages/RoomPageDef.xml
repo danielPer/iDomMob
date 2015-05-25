@@ -4,6 +4,8 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="TIdomacice1" RangeSize="25" DataControl="AppModuleAMDataControl" id="TIdomacice1Iterator"/>
+    <invokeAction id="invokeAction" Binds="setCurrentRowWithKeyValue" Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext .postback == false}"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TIdomacice1Iterator" id="Datum">
@@ -51,5 +53,14 @@
         <Item Value="BrOpostelja"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="TIdomacice1Iterator" id="setCurrentRowWithKeyValue"
+            InstanceName="AppModuleAMDataControl.TIdomacice1" DataControl="AppModuleAMDataControl"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{requestContext.roomId}" NDType="java.lang.String" NDOption="3"/>
+    </action>
+    <action IterBinding="TIdomacice1Iterator" id="setCurrentRowWithKeyValue1" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.roomId}" NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

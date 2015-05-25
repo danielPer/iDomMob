@@ -21,7 +21,6 @@
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="hr.fet.iDom.model.VO.LoginVO.DjeId"/>
       <Item Value="hr.fet.iDom.model.VO.LoginVO.SoId"/>
     </AttrArray>
   </ViewLinkDefEnd>
@@ -34,7 +33,6 @@
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="hr.fet.iDom.model.VO.TIdomaciceVO.DjeId"/>
       <Item Value="hr.fet.iDom.model.VO.TIdomaciceVO.SoId"/>
     </AttrArray>
   </ViewLinkDefEnd>

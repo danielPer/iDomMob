@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="roomEditPageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EditRoomVO1" RangeSize="25" DataControl="AppModuleAMDataControl" id="EditRoomVO1Iterator"/>
+    <invokeAction id="invokeExecute" Binds="ExecuteWithParams" Refresh="prepareModel"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="BrOsoba">
+      <AttrNames>
+        <Item Value="BrOsoba"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="Datum">
+      <AttrNames>
+        <Item Value="Datum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="DjeId">
+      <AttrNames>
+        <Item Value="DjeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="Napomena">
+      <AttrNames>
+        <Item Value="Napomena"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="OznDomacice1">
+      <AttrNames>
+        <Item Value="OznDomacice1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="OznDomacice2">
+      <AttrNames>
+        <Item Value="OznDomacice2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="SjId">
+      <AttrNames>
+        <Item Value="SjId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EditRoomVO1Iterator" id="ExecuteWithParams" InstanceName="AppModuleAMDataControl.EditRoomVO1"
+            DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="RoomId" NDValue="#{requestScope.roomId}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

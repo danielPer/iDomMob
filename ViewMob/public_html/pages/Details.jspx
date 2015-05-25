@@ -28,6 +28,8 @@
                                    headerText="Soba">
                             <tr:panelList>
                                 <tr:commandLink action="editRoom">
+                                
+                                <f:attribute name="roomId" value="#{row.Id}"/>
                                     <tr:panelGroupLayout styleClass="af_m_listing" layout="horizontal"
                                                          inlineStyle="width: 100%">
                                         <tr:panelGroupLayout layout="horizontal">
@@ -58,6 +60,8 @@
                                                            inlineStyle="font-size: 1.2em margin-left: 10px;"/>
                                         </tr:panelGroupLayout>
                                     </tr:panelGroupLayout>
+                                    <tr:setActionListener from="#{row.bindings.Id.inputValue}"
+                                                          to="#{requestScope.roomId}"/>
                                 </tr:commandLink>
                             </tr:panelList>
                         </tr:column>

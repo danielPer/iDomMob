@@ -18,6 +18,7 @@
           <Item Value="Ozn1Color"/>
           <Item Value="OznDomacice1"/>
           <Item Value="OznDomacice2"/>
+          <Item Value="Id"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

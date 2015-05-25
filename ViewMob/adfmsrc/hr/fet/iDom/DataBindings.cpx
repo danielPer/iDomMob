@@ -5,11 +5,13 @@
     <page path="/pages/Login.jspx" usageId="hr_fet_iDom_LoginPageDef"/>
     <page path="/pages/Details.jspx" usageId="hr_fet_iDom_DetailsPageDef"/>
     <page path="/pages/Room.jspx" usageId="hr_fet_iDom_RoomPageDef"/>
+    <page path="/pages/roomEdit.jspx" usageId="hr_fet_iDom_roomEditPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="hr_fet_iDom_LoginPageDef" path="pages.LoginPageDef"/>
     <page id="hr_fet_iDom_DetailsPageDef" path="pages.DetailsPageDef"/>
     <page id="hr_fet_iDom_RoomPageDef" path="pages.RoomPageDef"/>
+    <page id="hr_fet_iDom_roomEditPageDef" path="pages.roomEditPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleAMDataControl" Package="hr.fet.iDom.model.Am"
