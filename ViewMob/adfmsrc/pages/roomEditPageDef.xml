@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="EditRoomVO1" RangeSize="25" DataControl="AppModuleAMDataControl" id="EditRoomVO1Iterator"/>
-    <invokeAction id="invokeExecute" Binds="ExecuteWithParams" Refresh="prepareModel"/>
+    <invokeAction Binds="ExecuteWithParams" id="invokeExecute" Refresh="prepareModel"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EditRoomVO1Iterator" id="BrOsoba">
@@ -50,7 +50,11 @@
     </attributeValues>
     <action IterBinding="EditRoomVO1Iterator" id="ExecuteWithParams" InstanceName="AppModuleAMDataControl.EditRoomVO1"
             DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="executeWithParams">
-      <NamedData NDName="RoomId" NDValue="#{requestScope.roomId}" NDType="java.lang.String"/>
+      <NamedData NDName="RoomId" NDValue="#{sessionScope.roomId}" NDType="java.lang.String"/>
     </action>
+    <action id="Commit" InstanceName="AppModuleAMDataControl" DataControl="AppModuleAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="AppModuleAMDataControl"/>
   </bindings>
 </pageDefinition>

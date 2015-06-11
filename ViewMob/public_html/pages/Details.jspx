@@ -61,7 +61,7 @@
                                         </tr:panelGroupLayout>
                                     </tr:panelGroupLayout>
                                     <tr:setActionListener from="#{row.bindings.Id.inputValue}"
-                                                          to="#{requestScope.roomId}"/>
+                                                          to="#{sessionScope.roomId}"/>
                                 </tr:commandLink>
                             </tr:panelList>
                         </tr:column>

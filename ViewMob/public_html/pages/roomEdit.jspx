@@ -17,7 +17,12 @@
             <trh:body>
                 <tr:messages/><h:form>
                     <tr:panelHeader text="panelHeader 1" styleClass='af_m_toolbar'>
-                        <tr:commandButton text="Natrag" action="back" styleClass="af_m_backButton"/>
+                        <tr:commandButton actionListener="#{bindings.Rollback.execute}" text="Natrag" immediate="true"
+                                          styleClass="af_m_backButton" action="back">
+                            <tr:resetActionListener/>
+                        </tr:commandButton>
+                        <tr:commandButton text="Spremi" styleClass="af_m_button"
+                                          actionListener="#{bindings.Commit.execute}" action="back"/>
                     </tr:panelHeader>
                     <tr:panelFormLayout>
                         <tr:inputText value="#{bindings.BrOsoba.inputValue}" label="#{bindings.BrOsoba.hints.label}"
@@ -51,7 +56,7 @@
                         <tr:inputText value="#{bindings.Napomena.inputValue}" label="#{bindings.Napomena.hints.label}"
                                       required="#{bindings.Napomena.hints.mandatory}"
                                       columns="#{bindings.Napomena.hints.displayWidth}"
-                                      maximumLength="#{bindings.Napomena.hints.precision}">
+                                      maximumLength="#{bindings.Napomena.hints.precision}" rows="1">
                             <f:validator binding="#{bindings.Napomena.validator}"/>
                         </tr:inputText>
                         <tr:inputText value="#{bindings.OznDomacice1.inputValue}"
