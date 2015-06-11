@@ -6,6 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="EditRoomVO1" RangeSize="25" DataControl="AppModuleAMDataControl" id="EditRoomVO1Iterator"/>
     <invokeAction Binds="ExecuteWithParams" id="invokeExecute" Refresh="prepareModel"/>
+    <iterator id="TIdomacice1Iterator" Binds="TIdomacice1" DataControl="AppModuleAMDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EditRoomVO1Iterator" id="BrOsoba">
@@ -54,7 +55,7 @@
     </action>
     <action id="Commit" InstanceName="AppModuleAMDataControl" DataControl="AppModuleAMDataControl"
             RequiresUpdateModel="true" Action="commitTransaction"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
-            DataControl="AppModuleAMDataControl"/>
+    <action IterBinding="TIdomacice1Iterator" id="Execute" InstanceName="AppModuleAMDataControl.TIdomacice1"
+            DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
