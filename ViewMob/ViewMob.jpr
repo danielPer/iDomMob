@@ -96,7 +96,7 @@
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
       <value n="j2eeWebAppName" v="iDom-ViewMob-webapp"/>
-      <value n="j2eeWebContextRoot" v="iDom-ViewMob-context-root"/>
+      <value n="j2eeWebContextRoot" v="iDom"/>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
