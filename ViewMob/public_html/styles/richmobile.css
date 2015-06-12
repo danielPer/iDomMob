@@ -3,7 +3,7 @@
 /*
  * Styles for all Webkit-based browsers including nokia_s60.
  */
-@agent webkit, nokia_s60 { 
+@agent webkit, nokia_s60,gecko { 
   /*
    * Sets the style for a page's body element.
    */

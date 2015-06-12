@@ -19,11 +19,6 @@
         <Item Value="Napomena"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EditRoomVO1Iterator" id="OznDomacice2">
-      <AttrNames>
-        <Item Value="OznDomacice2"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="EditRoomVO1Iterator" id="ExecuteWithParams" InstanceName="AppModuleAMDataControl.EditRoomVO1"
             DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="executeWithParams">
       <NamedData NDName="RoomId" NDValue="#{sessionScope.roomId}" NDType="java.lang.String"/>
@@ -34,6 +29,8 @@
             DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <listOfValues StaticList="false" Uses="LOV_OznDomacice1" IterBinding="EditRoomVO1Iterator" id="OznDomacice1"/>
     <list IterBinding="EditRoomVO1Iterator" StaticList="false" Uses="LOV_OznDomacice1" id="OznDomacice11"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EditRoomVO1Iterator" StaticList="false" Uses="LOV_OznDomacice2" id="OznDomacice21"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
