@@ -37,7 +37,14 @@
     PrecisionRule="true"
     EntityAttrName="BrOsoba"
     EntityUsage="TIdomaciceEO"
-    AliasName="BR_OSOBA"/>
+    AliasName="BR_OSOBA">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.EditRoomVO.BrOsoba_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Datum"
     IsNotNull="true"
@@ -82,7 +89,14 @@
     PrecisionRule="true"
     EntityAttrName="SjId"
     EntityUsage="TIdomaciceEO"
-    AliasName="SJ_ID"/>
+    AliasName="SJ_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.EditRoomVO.SjId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="hr.fet.iDom.model.ModelBundle"/>

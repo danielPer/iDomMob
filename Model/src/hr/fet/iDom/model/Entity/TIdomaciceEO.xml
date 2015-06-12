@@ -32,7 +32,14 @@
     SQLType="INTEGER"
     Type="java.lang.Integer"
     ColumnType="INTEGER"
-    TableName="T_IDOMACICE"/>
+    TableName="T_IDOMACICE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.Entity.TIdomaciceEO.DjeId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Datum"
     IsNotNull="true"
@@ -40,7 +47,14 @@
     SQLType="DATE"
     Type="oracle.jbo.domain.Timestamp"
     ColumnType="DATE"
-    TableName="T_IDOMACICE"/>
+    TableName="T_IDOMACICE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.Entity.TIdomaciceEO.Datum_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="OznDomacice1"
     IsNotNull="true"
@@ -80,6 +94,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="240"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.Entity.TIdomaciceEO.Napomena_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="MOzn1"
@@ -163,4 +183,8 @@
       <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.DjeId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

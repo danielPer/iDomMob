@@ -119,6 +119,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.LoginVO.SoId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

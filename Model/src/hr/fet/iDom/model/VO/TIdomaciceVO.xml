@@ -151,7 +151,14 @@
     PrecisionRule="true"
     EntityAttrName="SjId"
     EntityUsage="TIdomaciceEO"
-    AliasName="SJ_ID"/>
+    AliasName="SJ_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.TIdomaciceVO.SjId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DjeId"
     PrecisionRule="true"
@@ -210,6 +217,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.TIdomaciceVO.SoId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -240,14 +249,28 @@
     PrecisionRule="true"
     EntityAttrName="BrPpostelja"
     EntityUsage="MSjEO"
-    AliasName="BR_PPOSTELJA"/>
+    AliasName="BR_PPOSTELJA">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.TIdomaciceVO.BrPpostelja_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BrOpostelja"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="BrOpostelja"
     EntityUsage="MSjEO"
-    AliasName="BR_OPOSTELJA"/>
+    AliasName="BR_OPOSTELJA">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.TIdomaciceVO.BrOpostelja_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ime"
     IsNotNull="true"
@@ -299,4 +322,8 @@
     <Item Value="Id"/>
     <Item Value="Id1"/>
   </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
