@@ -29,6 +29,48 @@
     Name="RoomId"
     Kind="where"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="MOzn1VO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MOzn1VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MOzn2VO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MOzn2VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OznDomacice1"
+    ListVOName="MOzn1VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OznDomacice1"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Opis"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OznDomacice2"
+    ListVOName="MOzn2VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OznDomacice2"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Opis"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TIdomaciceEO"
     Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
@@ -37,7 +79,8 @@
     PrecisionRule="true"
     EntityAttrName="BrOsoba"
     EntityUsage="TIdomaciceEO"
-    AliasName="BR_OSOBA">
+    AliasName="BR_OSOBA"
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -77,13 +120,29 @@
     PrecisionRule="true"
     EntityAttrName="OznDomacice1"
     EntityUsage="TIdomaciceEO"
-    AliasName="OZN_DOMACICE1"/>
+    AliasName="OZN_DOMACICE1"
+    LOVName="LOV_OznDomacice1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="OznDomacice2"
     PrecisionRule="true"
     EntityAttrName="OznDomacice2"
     EntityUsage="TIdomaciceEO"
-    AliasName="OZN_DOMACICE2"/>
+    AliasName="OZN_DOMACICE2"
+    LOVName="LOV_OznDomacice2">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="radio"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SjId"
     PrecisionRule="true"

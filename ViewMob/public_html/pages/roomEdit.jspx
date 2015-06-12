@@ -32,41 +32,10 @@
                             <f:validator binding="#{bindings.BrOsoba.validator}"/>
                             <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOsoba.format}"/>
                         </tr:inputText>
-                        <tr:inputText value="#{bindings.Datum.inputValue}" label="#{bindings.Datum.hints.label}"
-                                      required="#{bindings.Datum.hints.mandatory}"
-                                      columns="#{bindings.Datum.hints.displayWidth}"
-                                      maximumLength="#{bindings.Datum.hints.precision}">
-                            <f:validator binding="#{bindings.Datum.validator}"/>
-                            <f:convertDateTime pattern="#{bindings.Datum.format}"/>
-                        </tr:inputText>
-                        <tr:inputText value="#{bindings.DjeId.inputValue}" label="#{bindings.DjeId.hints.label}"
-                                      required="#{bindings.DjeId.hints.mandatory}"
-                                      columns="#{bindings.DjeId.hints.displayWidth}"
-                                      maximumLength="#{bindings.DjeId.hints.precision}">
-                            <f:validator binding="#{bindings.DjeId.validator}"/>
-                            <f:convertNumber groupingUsed="false" pattern="#{bindings.DjeId.format}"/>
-                        </tr:inputText>
-                        <tr:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
-                                      required="#{bindings.Id.hints.mandatory}"
-                                      columns="#{bindings.Id.hints.displayWidth}"
-                                      maximumLength="#{bindings.Id.hints.precision}">
-                            <f:validator binding="#{bindings.Id.validator}"/>
-                            <f:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
-                        </tr:inputText>
-                        <tr:inputText value="#{bindings.Napomena.inputValue}" label="#{bindings.Napomena.hints.label}"
-                                      required="#{bindings.Napomena.hints.mandatory}"
-                                      columns="#{bindings.Napomena.hints.displayWidth}"
-                                      maximumLength="#{bindings.Napomena.hints.precision}" rows="1">
-                            <f:validator binding="#{bindings.Napomena.validator}"/>
-                        </tr:inputText>
-                        <tr:inputText value="#{bindings.OznDomacice1.inputValue}"
-                                      label="#{bindings.OznDomacice1.hints.label}"
-                                      required="#{bindings.OznDomacice1.hints.mandatory}"
-                                      columns="#{bindings.OznDomacice1.hints.displayWidth}"
-                                      maximumLength="#{bindings.OznDomacice1.hints.precision}">
-                            <f:validator binding="#{bindings.OznDomacice1.validator}"/>
-                            <f:convertNumber groupingUsed="false" pattern="#{bindings.OznDomacice1.format}"/>
-                        </tr:inputText>
+                        <tr:selectOneChoice value="#{bindings.OznDomacice11.inputValue}"
+                                            label="#{bindings.OznDomacice11.label}">
+                            <f:selectItems value="#{bindings.OznDomacice11.items}"/>
+                        </tr:selectOneChoice>
                         <tr:inputText value="#{bindings.OznDomacice2.inputValue}"
                                       label="#{bindings.OznDomacice2.hints.label}"
                                       required="#{bindings.OznDomacice2.hints.mandatory}"
@@ -75,12 +44,11 @@
                             <f:validator binding="#{bindings.OznDomacice2.validator}"/>
                             <f:convertNumber groupingUsed="false" pattern="#{bindings.OznDomacice2.format}"/>
                         </tr:inputText>
-                        <tr:inputText value="#{bindings.SjId.inputValue}" label="#{bindings.SjId.hints.label}"
-                                      required="#{bindings.SjId.hints.mandatory}"
-                                      columns="#{bindings.SjId.hints.displayWidth}"
-                                      maximumLength="#{bindings.SjId.hints.precision}">
-                            <f:validator binding="#{bindings.SjId.validator}"/>
-                            <f:convertNumber groupingUsed="false" pattern="#{bindings.SjId.format}"/>
+                        <tr:inputText value="#{bindings.Napomena.inputValue}" label="#{bindings.Napomena.hints.label}"
+                                      required="#{bindings.Napomena.hints.mandatory}"
+                                      columns="#{bindings.Napomena.hints.displayWidth}"
+                                      maximumLength="#{bindings.Napomena.hints.precision}" rows="1">
+                            <f:validator binding="#{bindings.Napomena.validator}"/>
                         </tr:inputText>
                     </tr:panelFormLayout>
                 </h:form>

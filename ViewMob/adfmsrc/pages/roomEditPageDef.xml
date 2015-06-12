@@ -14,39 +14,14 @@
         <Item Value="BrOsoba"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EditRoomVO1Iterator" id="Datum">
-      <AttrNames>
-        <Item Value="Datum"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EditRoomVO1Iterator" id="DjeId">
-      <AttrNames>
-        <Item Value="DjeId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EditRoomVO1Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EditRoomVO1Iterator" id="Napomena">
       <AttrNames>
         <Item Value="Napomena"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EditRoomVO1Iterator" id="OznDomacice1">
-      <AttrNames>
-        <Item Value="OznDomacice1"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EditRoomVO1Iterator" id="OznDomacice2">
       <AttrNames>
         <Item Value="OznDomacice2"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EditRoomVO1Iterator" id="SjId">
-      <AttrNames>
-        <Item Value="SjId"/>
       </AttrNames>
     </attributeValues>
     <action IterBinding="EditRoomVO1Iterator" id="ExecuteWithParams" InstanceName="AppModuleAMDataControl.EditRoomVO1"
@@ -57,5 +32,8 @@
             RequiresUpdateModel="true" Action="commitTransaction"/>
     <action IterBinding="TIdomacice1Iterator" id="Execute" InstanceName="AppModuleAMDataControl.TIdomacice1"
             DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <listOfValues StaticList="false" Uses="LOV_OznDomacice1" IterBinding="EditRoomVO1Iterator" id="OznDomacice1"/>
+    <list IterBinding="EditRoomVO1Iterator" StaticList="false" Uses="LOV_OznDomacice1" id="OznDomacice11"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
