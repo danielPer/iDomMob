@@ -117,8 +117,12 @@
   bottom: 0 !important;     
   width: 100% !important; 
   background: url(/images/toolbar1.png) #6d84a2 repeat-x  !important;
-  color: white !important;
+  color: white !important;    
+  text-align: center;
+    }
     
+    .footer h1 {
+        color: white;
     }
 
   /* 

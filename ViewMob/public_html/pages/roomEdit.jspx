@@ -46,7 +46,7 @@
                             <f:validator binding="#{bindings.Napomena.validator}"/>
                         </tr:inputText>
                     </tr:panelFormLayout>
-                    <tr:panelHeader text="Footer" styleClass="footer"/>
+                    <tr:panelHeader text="Prijavljeni ste kao: " styleClass="footer"/>
                 </h:form>
             </trh:body>
         </trh:html>

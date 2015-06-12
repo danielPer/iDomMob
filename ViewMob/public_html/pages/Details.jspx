@@ -66,6 +66,7 @@
                             </tr:panelList>
                         </tr:column>
                     </tr:table>
+                    <tr:panelHeader text="Prijavljeni ste kao: " styleClass="footer"/>
                 </h:form>
             </trh:body>
         </trh:html>
