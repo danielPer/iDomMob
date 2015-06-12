@@ -115,6 +115,8 @@
     border-style: none;
     background: #FFFFFF;
   }
+  
+
 
   /* 
    * Class below applies to each cell of a table component.  
@@ -134,7 +136,8 @@
   af|column::cell-text a img {
     color: #FFFFFF;
   }
-
+  
+ 
   /*
    * Class below is applied to the detail facet of a table component
    */
@@ -468,8 +471,17 @@
     background:rgb(140,151,180) repeat-x;
     text-align: left;
     height: 40px;
+    
   }
-
+  
+  .footer {
+  position: fixed !important;     
+  bottom: 0 !important;     
+  width: 100% !important; 
+  background: url(/images/toolbar1.png) #6d84a2 repeat-x  !important;
+  color: white !important;
+    
+    }
   /* 
    * This expression applies to a page's title.  
    */

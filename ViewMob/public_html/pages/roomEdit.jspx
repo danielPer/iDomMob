@@ -16,7 +16,7 @@
             </trh:head>
             <trh:body>
                 <tr:messages/><h:form>
-                    <tr:panelHeader text="panelHeader 1" styleClass='af_m_toolbar'>
+                    <tr:panelHeader styleClass='af_m_toolbar' text="Uredi sobu">
                         <tr:commandButton actionListener="#{bindings.Execute.execute}" text="Natrag" immediate="true"
                                           styleClass="af_m_backButton" action="back">
                             <tr:resetActionListener/>
@@ -42,11 +42,11 @@
                         </tr:selectOneRadio>
                         <tr:inputText value="#{bindings.Napomena.inputValue}" label="#{bindings.Napomena.hints.label}"
                                       required="#{bindings.Napomena.hints.mandatory}"
-                                      columns="#{bindings.Napomena.hints.displayWidth}"
-                                      maximumLength="#{bindings.Napomena.hints.precision}" rows="1">
+                                      columns="20" rows="3">
                             <f:validator binding="#{bindings.Napomena.validator}"/>
                         </tr:inputText>
                     </tr:panelFormLayout>
+                    <tr:panelHeader text="Footer" styleClass="footer"/>
                 </h:form>
             </trh:body>
         </trh:html>

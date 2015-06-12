@@ -111,6 +111,15 @@
     background: url(/images/toolbar.png) #6d84a2 repeat-x ;
     display: block
   }
+  
+  .footer {
+  position: fixed !important;     
+  bottom: 0 !important;     
+  width: 100% !important; 
+  background: url(/images/toolbar1.png) #6d84a2 repeat-x  !important;
+  color: white !important;
+    
+    }
 
   /* 
    * Expression below applies to a page's title.  
@@ -497,7 +506,7 @@
   /* 
    * Class 'af_m_backButton' is applicable to a commandLink component which 
    * will be displayed to the left side of a page's title. This commandLink  
-   * performs cancel operations and can be used to navigate back to the previous 
+   * per   rms cancel operations and can be used to navigate back to the previous 
    * page
    */
   .af_m_toolbar .af_m_backButton {
