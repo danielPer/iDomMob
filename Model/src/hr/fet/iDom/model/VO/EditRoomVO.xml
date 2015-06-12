@@ -126,6 +126,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.EditRoomVO.OznDomacice1_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -140,6 +142,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="radio"/>
+        <LABEL
+          ResId="hr.fet.iDom.model.VO.EditRoomVO.OznDomacice2_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
