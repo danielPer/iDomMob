@@ -35,7 +35,7 @@
                                         <tr:panelGroupLayout layout="horizontal">
                                             <dvtt:gauge id="${vs.current}gauge2" gaugeType="LED"
                                                         value="#{row.bindings.OznDomacice1.inputValue}"
-                                                        inlineStyle="width:30px; height:30px;">
+                                                        inlineStyle="width:30px; height:30px;" ledStyle="LS_RECTANGLE">
                                                 <dvtt:thresholdSet>
                                                     <dvtt:threshold thresholdMaxValue="1.0" fillColor="#ff0000"/>
                                                     <dvtt:threshold thresholdMaxValue="2.0" fillColor="#0000ff"/>
@@ -45,18 +45,11 @@
                                                     <dvtt:threshold fillColor="#000bb0"/>
                                                 </dvtt:thresholdSet>
                                             </dvtt:gauge>
-                                            <dvtt:gauge id="${vs.current}gauge1" gaugeType="LED"
-                                                        inlineStyle="width:30px; height:30px;"
-                                                        value="#{row.bindings.OznDomacice2.inputValue}" ledStyle="LS_RECTANGLE">
-                                                <dvtt:thresholdSet>
-                                                    <dvtt:threshold thresholdMaxValue="1.0" fillColor="#00ff00"/>
-                                                    <dvtt:threshold thresholdMaxValue="2.0" fillColor="#848400"/>
-                                                    <dvtt:threshold fillColor="#000ff0"/>
-                                                </dvtt:thresholdSet>
-                                            </dvtt:gauge>
+                                            <tr:image source='#{row.bindings.OznDomacice2.inputValue == 1 ? "../images/greenLock.png" : "../images/redLock.png"}'
+                                                      inlineStyle="margin-left: 15px;"/>
                                         </tr:panelGroupLayout>
                                         <tr:panelGroupLayout inlineStyle="margin-right:20px">
-                                            <tr:outputText value="#{row.bindings.Broj.inputValue}"
+                                            <tr:outputText value="#{row.bindings.Broj.inputValue} "
                                                            inlineStyle="font-size: 1.2em margin-left: 10px;"/>
                                         </tr:panelGroupLayout>
                                     </tr:panelGroupLayout>

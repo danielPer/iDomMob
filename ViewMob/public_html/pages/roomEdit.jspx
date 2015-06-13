@@ -36,10 +36,12 @@
                                             label="#{bindings.OznDomacice11.label}">
                             <f:selectItems value="#{bindings.OznDomacice11.items}"/>
                         </tr:selectOneChoice>
-                        <tr:selectOneRadio value="#{bindings.OznDomacice21.inputValue}"
-                                           label="#{bindings.OznDomacice21.label}">
-                            <f:selectItems value="#{bindings.OznDomacice21.items}"/>
-                        </tr:selectOneRadio>
+                        <tr:panelLabelAndMessage label="#{bindings.OznDomacice21.label}">
+                            <tr:commandButton icon='#{bindings.OznDomacice21.inputValue == 1 ? "../images/greenLock.png" : "../images/redLock.png"}'>
+                                <tr:setActionListener from="#{bindings.OznDomacice21.inputValue == 1 ? 2 : 1}"
+                                                      to="#{bindings.OznDomacice21.inputValue}"/>
+                            </tr:commandButton>
+                        </tr:panelLabelAndMessage>
                         <tr:inputText value="#{bindings.Napomena.inputValue}" label="#{bindings.Napomena.hints.label}"
                                       required="#{bindings.Napomena.hints.mandatory}"
                                       columns="20" rows="3">

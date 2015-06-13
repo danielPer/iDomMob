@@ -27,5 +27,10 @@
         <Item Value="Ozn1Color"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TIdomacice1Iterator" id="OznDomacice2">
+      <AttrNames>
+        <Item Value="OznDomacice2"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
