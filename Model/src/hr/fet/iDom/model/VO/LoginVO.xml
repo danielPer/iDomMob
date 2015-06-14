@@ -8,9 +8,14 @@
   SelectList="TIdomaciceEO.DJE_ID, 
        TIdomaciceEO.ID, 
        MSjEO.SO_ID, 
-       MSjEO.ID AS ID1"
-  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO"
-  Where="TIdomaciceEO.SJ_ID = MSjEO.ID"
+       MSjEO.ID AS ID1, 
+       MDjelatniciEO.IME, 
+       MDjelatniciEO.ID AS ID2, 
+       MDjelatniciEO.PREZIME, 
+       MSoEO.NAZIV, 
+       MSoEO.ID AS ID3"
+  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO, M_DJELATNICI MDjelatniciEO, M_SO MSoEO"
+  Where="((TIdomaciceEO.SJ_ID = MSjEO.ID) AND (TIdomaciceEO.DJE_ID = MDjelatniciEO.ID)) AND (MSjEO.SO_ID = MSoEO.ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   FetchMode="FETCH_AS_NEEDED"
@@ -86,6 +91,44 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="MDjelatniciEO"
+    Entity="hr.fet.iDom.model.Entity.MDjelatniciEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkTcodjeIdIdAssoc.MDjelatnici"
+    SourceUsage="hr.fet.iDom.model.VO.LoginVO.TIdomaciceEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.DjeId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MDjelatniciEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="MSoEO"
+    Entity="hr.fet.iDom.model.Entity.MSoEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkSoIdAssoc.MSo"
+    SourceUsage="hr.fet.iDom.model.VO.LoginVO.MSjEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSjEO.SoId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSoEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="DjeId"
     PrecisionRule="true"
@@ -131,6 +174,57 @@
     EntityAttrName="Id"
     EntityUsage="MSjEO"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="Ime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ime"
+    EntityUsage="MDjelatniciEO"
+    AliasName="IME"/>
+  <ViewAttribute
+    Name="Id2"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MDjelatniciEO"
+    AliasName="ID2"/>
+  <ViewAttribute
+    Name="Prezime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Prezime"
+    EntityUsage="MDjelatniciEO"
+    AliasName="PREZIME"/>
+  <ViewAttribute
+    Name="Djelatnik"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[Ime + " " + Prezime]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Naziv"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Naziv"
+    EntityUsage="MSoEO"
+    AliasName="NAZIV"/>
+  <ViewAttribute
+    Name="Id3"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSoEO"
+    AliasName="ID3"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="Id1"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TIdomacice"
     ViewLink="hr.fet.iDom.model.VO.Link.LoginLink"

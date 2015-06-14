@@ -10,5 +10,15 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="Login1Iterator" StaticList="false" Uses="LOV_SoId" id="SoId" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="Login1Iterator" id="Djelatnik">
+      <AttrNames>
+        <Item Value="Djelatnik"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Login1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

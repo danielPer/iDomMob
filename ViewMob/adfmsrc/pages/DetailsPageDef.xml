@@ -6,11 +6,6 @@
     <iterator Binds="TIdomacice1" RangeSize="25" DataControl="AppModuleAMDataControl" id="TIdomacice1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="TIdomacice1Iterator" id="Naziv">
-      <AttrNames>
-        <Item Value="Naziv"/>
-      </AttrNames>
-    </attributeValues>
     <tree IterBinding="TIdomacice1Iterator" id="TIdomacice1">
       <nodeDefinition DefName="hr.fet.iDom.model.VO.TIdomaciceVO" Name="TIdomacice10">
         <AttrNames>

@@ -16,7 +16,7 @@
             </trh:head>
             <trh:body>
                 <tr:messages/><h:form>
-                    <tr:panelHeader styleClass='af_m_toolbar' text="Uredi sobu">
+                    <tr:panelHeader styleClass='af_m_toolbar' text="#{bindings.Broj.inputValue}">
                         <tr:commandButton actionListener="#{bindings.partialRollBack.execute}" text="Odustani"
                                           disabled="#{!bindings.partialRollBack.enabled}" action="back"
                                           styleClass="af_m_backButton">
@@ -49,7 +49,7 @@
                             <f:validator binding="#{bindings.Napomena.validator}"/>
                         </tr:inputText>
                     </tr:panelFormLayout>
-                    <tr:panelHeader text="Prijavljeni ste kao: " styleClass="footer"/>
+                    <tr:panelHeader text="Prijavljeni ste kao: #{sessionScope.djel} (#{sessionScope.so})" styleClass="footer"/>
                 </h:form>
             </trh:body>
         </trh:html>

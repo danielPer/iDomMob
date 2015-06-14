@@ -17,7 +17,7 @@
             </trh:head>
             <trh:body>
                 <tr:messages/><h:form>
-                    <tr:panelHeader styleClass="af_m_toolbar" text="#{bindings.Naziv.inputValue}">
+                    <tr:panelHeader styleClass="af_m_toolbar" text="Org. jedinice">
                         <tr:commandButton text="LogOut" action="logout" styleClass="af_m_backButton"/>
                     </tr:panelHeader>
                     <tr:table value="#{bindings.TIdomacice1.collectionModel}" var="row"
@@ -59,7 +59,7 @@
                             </tr:panelList>
                         </tr:column>
                     </tr:table>
-                    <tr:panelHeader text="Prijavljeni ste kao: " styleClass="footer"/>
+                    <tr:panelHeader text="Prijavljeni ste kao: #{sessionScope.djel} (#{sessionScope.so})" styleClass="footer"/>
                 </h:form>
             </trh:body>
         </trh:html>

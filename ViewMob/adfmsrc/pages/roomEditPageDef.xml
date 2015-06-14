@@ -32,5 +32,10 @@
     <methodAction id="partialRollBack" RequiresUpdateModel="true" Action="invokeMethod" MethodName="partialRollBack"
                   IsViewObjectMethod="true" DataControl="AppModuleAMDataControl"
                   InstanceName="data.AppModuleAMDataControl.EditRoomVO1"/>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="Broj">
+      <AttrNames>
+        <Item Value="Broj"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -17,8 +17,11 @@
             </trh:head>
             <trh:body>
                 <tr:messages/><h:form>
-                    <tr:panelHeader text="panelHeader 1" styleClass="af_m_toolbar">
-                        <tr:commandButton text="Login" action="login" styleClass="af_m_button"/>
+                    <tr:panelHeader text="iDom" styleClass="af_m_toolbar">
+                        <tr:commandButton text="Login" action="login" styleClass="af_m_button">
+                            <tr:setActionListener from="#{bindings.Djelatnik.inputValue}" to="#{sessionScope.djel}"/>
+                            <tr:setActionListener from="#{bindings.Naziv.inputValue}" to="#{sessionScope.so}"/>
+                        </tr:commandButton>
                     </tr:panelHeader>
                     <tr:panelFormLayout>
                         <tr:selectOneChoice value="#{bindings.DjeId.inputValue}" label="#{bindings.DjeId.label}">

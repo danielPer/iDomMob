@@ -12,13 +12,16 @@
        TIdomaciceEO.NAPOMENA, 
        TIdomaciceEO.OZN_DOMACICE1, 
        TIdomaciceEO.OZN_DOMACICE2, 
-       TIdomaciceEO.SJ_ID"
-  FromList="T_IDOMACICE TIdomaciceEO"
+       TIdomaciceEO.SJ_ID, 
+       MSjEO.BROJ, 
+       MSjEO.ID AS ID1"
+  FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
   UseGlueCode="false"
-  Where="TIdomaciceEO.ID = :RoomId"
+  Where="TIdomaciceEO.SJ_ID = MSjEO.ID
+and TIdomaciceEO.ID = :RoomId"
   ComponentClass="hr.fet.iDom.model.VO.EditRoomVOImpl"
   ComponentInterface="hr.fet.iDom.model.VO.common.EditRoomVO"
   ClientProxyName="hr.fet.iDom.model.VO.client.EditRoomVOClient">
@@ -42,6 +45,10 @@
   <ViewAccessor
     Name="MOzn2VO1"
     ViewObjectName="hr.fet.iDom.model.VO.MOzn2VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MSjVO1"
+    ViewObjectName="hr.fet.iDom.model.VO.MSjVO"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_OznDomacice1"
@@ -80,6 +87,25 @@
   <EntityUsage
     Name="TIdomaciceEO"
     Entity="hr.fet.iDom.model.Entity.TIdomaciceEO"/>
+  <EntityUsage
+    Name="MSjEO"
+    Entity="hr.fet.iDom.model.Entity.MSjEO"
+    Association="hr.fet.iDom.model.Entity.Assoc.FkSjIdAssoc"
+    AssociationEnd="hr.fet.iDom.model.Entity.Assoc.FkSjIdAssoc.MSj"
+    SourceUsage="hr.fet.iDom.model.VO.EditRoomVO.TIdomaciceEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.TIdomaciceEO.SjId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="hr.fet.iDom.model.Entity.MSjEO.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="BrOsoba"
     PrecisionRule="true"
@@ -166,6 +192,29 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Broj"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Broj"
+    EntityUsage="MSjEO"
+    AliasName="BROJ"/>
+  <ViewAttribute
+    Name="Id1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MSjEO"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="MSj"
+    ViewLink="hr.fet.iDom.model.VO.Link.EditRoomSjLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
