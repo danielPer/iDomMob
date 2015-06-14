@@ -17,8 +17,9 @@
             <trh:body>
                 <tr:messages/><h:form>
                     <tr:panelHeader styleClass='af_m_toolbar' text="Uredi sobu">
-                        <tr:commandButton actionListener="#{bindings.Execute.execute}" text="Natrag" immediate="true"
-                                          styleClass="af_m_backButton" action="back">
+                        <tr:commandButton actionListener="#{bindings.partialRollBack.execute}" text="Odustani"
+                                          disabled="#{!bindings.partialRollBack.enabled}" action="back"
+                                          styleClass="af_m_backButton">
                             <tr:resetActionListener/>
                         </tr:commandButton>
                         <tr:commandButton text="Spremi" styleClass="af_m_button"

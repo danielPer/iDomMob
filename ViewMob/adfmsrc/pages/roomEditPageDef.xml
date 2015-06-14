@@ -6,7 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="EditRoomVO1" RangeSize="25" DataControl="AppModuleAMDataControl" id="EditRoomVO1Iterator"/>
     <invokeAction Binds="ExecuteWithParams" id="invokeExecute" Refresh="prepareModel"/>
-    <iterator id="TIdomacice1Iterator" Binds="TIdomacice1" DataControl="AppModuleAMDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EditRoomVO1Iterator" id="BrOsoba">
@@ -25,12 +24,13 @@
     </action>
     <action id="Commit" InstanceName="AppModuleAMDataControl" DataControl="AppModuleAMDataControl"
             RequiresUpdateModel="true" Action="commitTransaction"/>
-    <action IterBinding="TIdomacice1Iterator" id="Execute" InstanceName="AppModuleAMDataControl.TIdomacice1"
-            DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <listOfValues StaticList="false" Uses="LOV_OznDomacice1" IterBinding="EditRoomVO1Iterator" id="OznDomacice1"/>
     <list IterBinding="EditRoomVO1Iterator" StaticList="false" Uses="LOV_OznDomacice1" id="OznDomacice11"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="EditRoomVO1Iterator" StaticList="false" Uses="LOV_OznDomacice2" id="OznDomacice21"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <methodAction id="partialRollBack" RequiresUpdateModel="true" Action="invokeMethod" MethodName="partialRollBack"
+                  IsViewObjectMethod="true" DataControl="AppModuleAMDataControl"
+                  InstanceName="data.AppModuleAMDataControl.EditRoomVO1"/>
   </bindings>
 </pageDefinition>

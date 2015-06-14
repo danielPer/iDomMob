@@ -18,7 +18,13 @@
   CustomQuery="false"
   PageIterMode="Full"
   UseGlueCode="false"
-  Where="TIdomaciceEO.ID = :RoomId">
+  Where="TIdomaciceEO.ID = :RoomId"
+  ComponentClass="hr.fet.iDom.model.VO.EditRoomVOImpl"
+  ComponentInterface="hr.fet.iDom.model.VO.common.EditRoomVO"
+  ClientProxyName="hr.fet.iDom.model.VO.client.EditRoomVOClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -164,4 +170,12 @@
     <PropertiesBundle
       PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
   </ResourceBundle>
+  <ClientInterface>
+    <Method
+      Name="partialRollBack"
+      MethodName="partialRollBack">
+      <Return
+        Type="void"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>
