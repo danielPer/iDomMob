@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EditRoomSjLink"
+  Version="11.1.2.64.36">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="hr.fet.iDom.model.VO.Link.EditRoomSjLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="EditRoom"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.fet.iDom.model.VO.EditRoomVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EditRoom"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.VO.EditRoomVO.SjId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MSj"
+    Cardinality="-1"
+    Owner="hr.fet.iDom.model.VO.MSjVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="MSj"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.fet.iDom.model.VO.MSjVO.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fet.iDom.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>
