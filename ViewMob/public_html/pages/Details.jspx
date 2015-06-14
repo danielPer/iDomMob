@@ -59,16 +59,6 @@
                             </tr:panelList>
                         </tr:column>
                     </tr:table>
-                    <tr:panelAccordion discloseNone="true">
-                        <tr:showDetailItem text="Legenda boja">
-                            <dvtt:gauge id="gauge1" gaugeType="LED"
-                                        inlineStyle="width:30px; height:30px;" ledStyle="LS_RECTANGLE">
-                                <dvtt:thresholdSet>
-                                    <dvtt:threshold fillColor="#ff0000"/>
-                                </dvtt:thresholdSet>
-                            </dvtt:gauge>
-                        </tr:showDetailItem>
-                    </tr:panelAccordion>
                     <tr:panelHeader text="Prijavljeni ste kao: #{sessionScope.djel} (#{sessionScope.so})" styleClass="footer"/>
                 </h:form>
             </trh:body>
