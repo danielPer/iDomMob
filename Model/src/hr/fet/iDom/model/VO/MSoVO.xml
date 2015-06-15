@@ -13,7 +13,12 @@
   CustomQuery="false"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  Where="id in (select so_id from m_sj where id in (select sj_id from t_idomacice where dje_id=:vDjeId))">
+  <Variable
+    Name="vDjeId"
+    Kind="where"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="MSoEO"
     Entity="hr.fet.iDom.model.Entity.MSoEO"/>

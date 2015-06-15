@@ -33,8 +33,13 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="MSoVO1"
-    ViewObjectName="hr.fet.iDom.model.VO.MSoVO"
-    RowLevelBinds="true"/>
+    ViewObjectName="hr.fet.iDom.model.VO.MSoVO">
+    <ParameterMap>
+      <PIMap Variable="vDjeId">
+        <TransientExpression><![CDATA[DjeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_DjeId"
     ListVOName="MDjelatniciVO1"

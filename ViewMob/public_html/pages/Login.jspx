@@ -18,16 +18,19 @@
             <trh:body>
                 <tr:messages/><h:form>
                     <tr:panelHeader text="iDom" styleClass="af_m_toolbar">
-                        <tr:commandButton text="Login" action="login" styleClass="af_m_button">
+                        <tr:commandButton text="Login" action="login" styleClass="af_m_button" partialTriggers="djeLov"
+                                          disabled="#{bindings.SoId.inputValue == null}">
                             <tr:setActionListener from="#{bindings.Djelatnik.inputValue}" to="#{sessionScope.djel}"/>
                             <tr:setActionListener from="#{bindings.Naziv.inputValue}" to="#{sessionScope.so}"/>
                         </tr:commandButton>
                     </tr:panelHeader>
                     <tr:panelFormLayout>
-                        <tr:selectOneChoice value="#{bindings.DjeId.inputValue}" label="#{bindings.DjeId.label}">
+                        <tr:selectOneChoice value="#{bindings.DjeId.inputValue}" label="#{bindings.DjeId.label}"
+                                            autoSubmit="true" id="djeLov">
                             <f:selectItems value="#{bindings.DjeId.items}"/>
                         </tr:selectOneChoice>
-                        <tr:selectOneChoice value="#{bindings.SoId.inputValue}" label="#{bindings.SoId.label}">
+                        <tr:selectOneChoice value="#{bindings.SoId.inputValue}" label="#{bindings.SoId.label}"
+                                            partialTriggers="djeLov">
                             <f:selectItems value="#{bindings.SoId.items}"/>
                         </tr:selectOneChoice>
                     </tr:panelFormLayout>
