@@ -39,7 +39,7 @@
                         </tr:selectOneChoice>
                         <tr:panelLabelAndMessage label="#{bindings.OznDomacice21.label}">
                             <tr:panelGroupLayout layout="horizontal">
-                                <tr:commandButton icon='#{bindings.OznDomacice21.inputValue == 1 ? "../images/greenLock.png" : "../images/redLock.png"}'
+                                <tr:commandButton icon='#{bindings.OznDomacice21.inputValue == 1 ? "../images/greenLock.png" : bindings.OznDomacice21.inputValue == 2 ? "../images/redLock.png" : "../images/undefinedLock.png"}'
                                                   inlineStyle="margin-right: 5px;">
                                     <tr:setActionListener from="#{bindings.OznDomacice21.inputValue == 1 ? 2 : 1}"
                                                           to="#{bindings.OznDomacice21.inputValue}"/>

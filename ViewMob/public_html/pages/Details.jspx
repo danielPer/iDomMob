@@ -45,7 +45,7 @@
                                                     <dvtt:threshold fillColor="#000bb0"/>
                                                 </dvtt:thresholdSet>
                                             </dvtt:gauge>
-                                            <tr:image source='#{row.bindings.OznDomacice2.inputValue == 1 ? "../images/greenLock.png" : "../images/redLock.png"}'
+                                            <tr:image source='#{row.bindings.OznDomacice2.inputValue == 1 ? "../images/greenLock.png" : row.bindings.OznDomacice2.inputValue == 2 ? "../images/redLock.png" : "../images/undefinedLock.png"}'
                                                       inlineStyle="margin-left: 15px;"/>
                                         </tr:panelGroupLayout>
                                         <tr:panelGroupLayout inlineStyle="margin-right:20px">
