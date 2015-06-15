@@ -5,14 +5,18 @@
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="MOzn1VO"
   Version="11.1.2.64.36"
-  SelectList="MOzn1EO.ID, 
-       MOzn1EO.OPIS"
-  FromList="M_OZN1 MOzn1EO"
   BindingStyle="OracleName"
-  CustomQuery="false"
+  CustomQuery="true"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full"
   UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT id, opis from (
+SELECT MOzn1EO.ID id, MOzn1EO.OPIS opis, ROW_NUMBER() over (partition by MOzn1EO.OPIS order by MOzn1EO.ID) as rowsNumber from M_OZN1 MOzn1EO)
+where rowsNumber = 1
+order by id]]></SQLQuery>
   <EntityUsage
     Name="MOzn1EO"
     Entity="hr.fet.iDom.model.Entity.MOzn1EO"/>
