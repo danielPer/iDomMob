@@ -26,13 +26,30 @@
                                           actionListener="#{bindings.Commit.execute}" action="back"/>
                     </tr:panelHeader>
                     <tr:panelFormLayout>
-                        <tr:inputText value="#{bindings.BrOsoba.inputValue}" label="#{bindings.BrOsoba.hints.label}"
-                                      required="#{bindings.BrOsoba.hints.mandatory}"
-                                      columns="#{bindings.BrOsoba.hints.displayWidth}"
-                                      maximumLength="#{bindings.BrOsoba.hints.precision}">
-                            <f:validator binding="#{bindings.BrOsoba.validator}"/>
-                            <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOsoba.format}"/>
-                        </tr:inputText>
+                        <tr:panelLabelAndMessage label="#{bindings.BrOsoba.hints.label}">
+                            <tr:panelGroupLayout inlineStyle="width: 100%;" layout="horizontal">
+                                <tr:commandButton id="descButton" icon="../images/downArrow.png"
+                                                  inlineStyle="margin-right:10px">
+                                    <tr:setActionListener from="#{bindings.BrOsoba.attributeValue gt 0 ? bindings.BrOsoba.attributeValue - 1 : bindings.BrOsoba.attributeValue}"
+                                                          to="#{bindings.BrOsoba.attributeValue}"/>
+                                </tr:commandButton>
+                                <tr:inputText value="#{bindings.BrOsoba.inputValue}"
+                                              label="#{bindings.BrOsoba.hints.label}"
+                                              required="#{bindings.BrOsoba.hints.mandatory}"
+                                              columns="#{bindings.BrOsoba.hints.displayWidth}"
+                                              maximumLength="#{bindings.BrOsoba.hints.precision}"
+                                              partialTriggers="descButton incButton" simple="true" readOnly="true"
+                                              inlineStyle="text-allign: center">
+                                    <f:validator binding="#{bindings.BrOsoba.validator}"/>
+                                    <f:convertNumber groupingUsed="false" pattern="#{bindings.BrOsoba.format}"/>
+                                </tr:inputText>
+                                <tr:commandButton id="incButton" icon="../images/upArrow.png"
+                                                  inlineStyle="margin-left: 10px;">
+                                    <tr:setActionListener from="#{bindings.BrOsoba.attributeValue+1}"
+                                                          to="#{bindings.BrOsoba.attributeValue}"/>
+                                </tr:commandButton>
+                            </tr:panelGroupLayout>
+                        </tr:panelLabelAndMessage>
                         <tr:selectOneChoice value="#{bindings.OznDomacice11.inputValue}"
                                             label="#{bindings.OznDomacice11.label}">
                             <f:selectItems value="#{bindings.OznDomacice11.items}"/>
