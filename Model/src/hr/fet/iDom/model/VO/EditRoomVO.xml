@@ -111,8 +111,7 @@ and TIdomaciceEO.ID = :RoomId"
     PrecisionRule="true"
     EntityAttrName="BrOsoba"
     EntityUsage="TIdomaciceEO"
-    AliasName="BR_OSOBA"
-    IsUpdateable="false">
+    AliasName="BR_OSOBA">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
