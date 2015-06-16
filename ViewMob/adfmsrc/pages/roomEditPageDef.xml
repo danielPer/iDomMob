@@ -37,5 +37,15 @@
         <Item Value="Broj"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="BrOpostelja">
+      <AttrNames>
+        <Item Value="BrOpostelja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EditRoomVO1Iterator" id="BrPpostelja">
+      <AttrNames>
+        <Item Value="BrPpostelja"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

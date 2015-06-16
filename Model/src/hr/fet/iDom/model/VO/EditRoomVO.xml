@@ -14,7 +14,9 @@
        TIdomaciceEO.OZN_DOMACICE2, 
        TIdomaciceEO.SJ_ID, 
        MSjEO.BROJ, 
-       MSjEO.ID AS ID1"
+       MSjEO.ID AS ID1, 
+       MSjEO.BR_OPOSTELJA, 
+       MSjEO.BR_PPOSTELJA"
   FromList="T_IDOMACICE TIdomaciceEO, M_SJ MSjEO"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -206,6 +208,20 @@ and TIdomaciceEO.ID = :RoomId"
     EntityAttrName="Id"
     EntityUsage="MSjEO"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="BrOpostelja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BrOpostelja"
+    EntityUsage="MSjEO"
+    AliasName="BR_OPOSTELJA"/>
+  <ViewAttribute
+    Name="BrPpostelja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BrPpostelja"
+    EntityUsage="MSjEO"
+    AliasName="BR_PPOSTELJA"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

@@ -16,7 +16,8 @@
             </trh:head>
             <trh:body>
                 <tr:messages/><h:form>
-                    <tr:panelHeader styleClass='af_m_toolbar' text="#{bindings.Broj.inputValue}">
+                    <tr:panelHeader styleClass='af_m_toolbar'
+                                    text="#{bindings.Broj.inputValue} (#{bindings.BrOpostelja.inputValue} + #{bindings.BrPpostelja.inputValue})">
                         <tr:commandButton actionListener="#{bindings.partialRollBack.execute}" text="Odustani"
                                           disabled="#{!bindings.partialRollBack.enabled}" action="back"
                                           styleClass="af_m_backButton">
