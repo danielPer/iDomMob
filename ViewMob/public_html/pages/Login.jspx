@@ -18,7 +18,8 @@
             <trh:body>
                 <tr:messages/><h:form>
                     <tr:panelHeader text="iDom" styleClass="af_m_toolbar">
-                        <tr:commandButton text="Login" action="login" styleClass="af_m_button" partialTriggers="djeLov"
+                        <tr:commandButton text="Login" action="login" styleClass="af_m_button"
+                                          partialTriggers="djeLov soLov"
                                           disabled="#{bindings.SoId.inputValue == null}">
                             <tr:setActionListener from="#{bindings.Djelatnik.inputValue}" to="#{sessionScope.djel}"/>
                             <tr:setActionListener from="#{bindings.Naziv.inputValue}" to="#{sessionScope.so}"/>
@@ -30,7 +31,7 @@
                             <f:selectItems value="#{bindings.DjeId.items}"/>
                         </tr:selectOneChoice>
                         <tr:selectOneChoice value="#{bindings.SoId.inputValue}" label="#{bindings.SoId.label}"
-                                            partialTriggers="djeLov">
+                                            partialTriggers="djeLov soLov" autoSubmit="true" id="soLov">
                             <f:selectItems value="#{bindings.SoId.items}"/>
                         </tr:selectOneChoice>
                     </tr:panelFormLayout>
