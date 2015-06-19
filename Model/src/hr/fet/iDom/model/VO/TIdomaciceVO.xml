@@ -31,7 +31,7 @@
   PageIterMode="Full"
   UseGlueCode="false"
   Where="((TIdomaciceEO.SJ_ID = MSjEO.ID) AND (TIdomaciceEO.DJE_ID = MDjelatniciEO.ID(+))) AND (MSjEO.SO_ID = MSoEO.ID(+))
-/*and TIdomaciceEO.ID in (select max(TIdomaciceEO.ID) tId from T_IDOMACICE TIdomaciceEO group by TIdomaciceEO.SJ_ID)*/">
+and TIdomaciceEO.ID in (select max(TIdomaciceEO.ID) tId from T_IDOMACICE TIdomaciceEO group by TIdomaciceEO.SJ_ID)">
   <ViewAccessor
     Name="MSoVO1"
     ViewObjectName="hr.fet.iDom.model.VO.MSoVO"
